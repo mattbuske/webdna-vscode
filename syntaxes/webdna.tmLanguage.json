@@ -1,0 +1,17 @@
+{
+	"scopeName": "source.webdna",
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "WebDNA",
+	"patterns": [
+		{ "include": "#keywords" }
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+					"name": "variable.webdna",
+					"match": "\\[\\/?\\b(?i)(text|math)\\b.*?\\]"
+				}
+			]
+		}
+	}
+}
