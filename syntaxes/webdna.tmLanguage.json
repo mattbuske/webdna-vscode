@@ -33,7 +33,10 @@
 		"functions":{
 			"patterns": [{
 				"name": "support.function.webdna",
-				"match": "\\[\\b(?i)(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|platform|product|random|referrer|referer|thisfile|thisurl|thisurlplusget|version)\\b.*?\\]"
+				"match": "\\[\\b(?i)(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b\\]"
+			},{
+				"name": "support.function.webdna",
+				"match": "\\[\\b(?i)(date|random|time)\\b.*?\\]"
 			}]
 		},
 		"strings": {

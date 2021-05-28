@@ -1,5 +1,9 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (05/28/2021) v-0.0.2:
+    - Added support for the highlighting of:
+        * global tags: date, password, random, time, username
+
 ## (05/27/2021) v-0.0.1:
     - Added support for block comments ([!][/!]) in the language configuration
     - Added support for the highlighting of:
