@@ -3,15 +3,62 @@
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "WebDNA",
 	"patterns": [
-		{ "include": "#keywords" }
+		{ "include": "#comments" },
+		{ "include": "#functions" },
+		{ "include": "#contexts" },
+		{ "include": "#keywords" },
+		{ "include": "#strings" },
+		{ "include": "#tags" }
 	],
 	"repository": {
 		"keywords": {
 			"patterns": [{
-					"name": "variable.webdna",
+					"name": "variable.language.webdna",
 					"match": "\\[\\/?\\b(?i)(text|math)\\b.*?\\]"
 				}
 			]
+		},
+		"contexts": {
+			"patterns":[{
+				"name": "variable.language.webdna",
+				"match": "\\[\\/?\\b(?i)(founditems|return|url)\\b\\]"
+			}]
+		},
+		"tags": {
+			"patterns": [{
+				"name": "variable.webdna",
+				"match": "\\[([^\\[\\]]*)\\]"
+			}]
+		},
+		"functions":{
+			"patterns": [{
+				"name": "support.function.webdna",
+				"match": "\\[\\b(?i)(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|platform|product|random|referrer|referer|thisfile|thisurl|thisurlplusget|version)\\b.*?\\]"
+			}]
+		},
+		"strings": {
+			"patterns": [{
+				"name": "string.quoted.double.webdna",
+				"begin": "\"",
+				"end": "\"",
+				"patterns": [{
+					"name": "constant.character.escape.webdna",
+					"match": "\\\\."
+				}]
+			},{
+				"patterns": [{
+					"name": "string.quoted.single.webdna",
+					"match": "'.*?'"
+				}]
+			}]
+		},
+		"comments":{
+			"patterns": [{
+				"name": "comment.block.webdna",
+				"begin": "\\[!\\]",
+				"end": "\\[\/!\\]",
+				"patterns": []
+			}]
 		}
 	}
 }
