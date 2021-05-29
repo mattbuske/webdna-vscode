@@ -5,8 +5,8 @@
         * Keyword tags: switch, case, hideif, showif, if, then, else, default
         * Keyword parameters for tags: switch, case
         * Depreciated keyword tags: html1, html2, html3
-        * Storage tags: text, math
-        * Storage parameters for tags: text, math
+        * Storage tags: text, math, function
+        * Storage parameters for tags: text, math, function
 
 ## (05/28/2021) v-0.0.2:
     - Updated patterns to recursivly apply patterns to correctly stylize tags inside tags

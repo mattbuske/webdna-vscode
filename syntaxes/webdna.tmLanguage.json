@@ -125,7 +125,7 @@
 					"begin": "(value)(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
-						"name": "storage.type.parameter.webdna"
+						"name": "variable.parameter.webdna"
 					  }
 					},
 					"comment": "WebDNA case/switch parameters",
@@ -329,13 +329,59 @@
 
 		"storage": {
 			"patterns": [{
+				"begin": "(?i)(\\[)\\b(function)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(name|preparse|scope)(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "variable.parameter.webdna"
+					  }
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				}]
+			},{
+				"begin": "(?i)(\\[/)\\b(function)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.variable.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
 				"begin": "(?i)(\\[)\\b(text)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
 					},
 					"2": {
-						"name": "storage.type.webdna"
+						"name": "storage.type.variable.webdna"
 					}
 				},
 				"end": "\\]",
@@ -348,7 +394,7 @@
 					"begin": "(multi|s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
-						"name": "storage.type.parameter.webdna"
+						"name": "variable.parameter.webdna"
 					  }
 					},
 					"comment": "WebDNA parameters",
@@ -365,7 +411,7 @@
 						"name": "punctuation.definition.tag.begin.webdna"
 					},
 					"2": {
-						"name": "storage.type.webdna"
+						"name": "storage.type.variable.webdna"
 					}
 				},
 				"end": "\\]",
@@ -378,7 +424,7 @@
 					"begin": "(s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
-						"name": "storage.type.parameter.webdna"
+						"name": "variable.parameter.webdna"
 					  }
 					},
 					"comment": "WebDNA parameters",
@@ -391,7 +437,7 @@
 					"begin": "(date|time)(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
-						"name": "storage.type.parameter.webdna"
+						"name": "variable.parameter.webdna"
 					  }
 					},
 					"comment": "WebDNA parameters",
@@ -408,7 +454,7 @@
 						"name": "punctuation.definition.tag.begin.webdna"
 					},
 					"2": {
-						"name": "storage.type.webdna"
+						"name": "storage.type.variable.webdna"
 					}
 				},
 				"end": "\\]",
