@@ -1,5 +1,9 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (05/29/2021) v-0.0.3:
+    - Added support for the highlighting of:
+        * keyword tags: switch, case, default
+
 ## (05/28/2021) v-0.0.2:
     - Updated patterns to recursivly apply patterns to correctly stylize tags inside tags
     - Updated various scope selectors
