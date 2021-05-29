@@ -64,7 +64,7 @@
 		},
 		"keywords": {
 			"patterns": [{
-				"begin": "(?i)(\\[)\\b(if)\\b(?=\\s|\\])",
+				"begin": "(?i)(\\[)\\b(hideif|if|showif)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -97,7 +97,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)\\b(if|else|then)\\b(?=\\s|\\])",
+				"begin": "(?i)(\\[/)\\b(else|hideif|if|then|showif)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
