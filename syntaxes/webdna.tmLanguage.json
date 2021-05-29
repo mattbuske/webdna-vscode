@@ -230,22 +230,6 @@
 				},
 				"patterns": [{ "include": "#webdna" }]
 			},{
-				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.definition.tag.begin.webdna"
-					},
-					"2": {
-						"name": "variable.webdna"
-					}
-				},
-				"end": "\\]",
-				"endCaptures": {
-					"0": {
-						"name": "punctuation.definition.tag.end.webdna"
-					}
-				}
-			},{
 				"begin": "(?i)(\\[)\\b(text|math)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
@@ -270,6 +254,22 @@
 					},
 					"2": {
 						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "variable.webdna"
 					}
 				},
 				"end": "\\]",
