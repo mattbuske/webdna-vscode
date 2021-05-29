@@ -2,7 +2,7 @@
     "name": "webdna",
     "displayName": "WebDNA",
     "description": "WebDNA File",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "EduCloud",
     "engines": {
         "vscode": "^1.49.0"
@@ -13,7 +13,7 @@
     "contributes": {
         "languages": [{
             "id": "webdna",
-            "aliases": ["WebDNA", "webdna", "WebCatalog", "webcatalog"],
+            "aliases": ["WebDNA", "webdna"],
             "extensions": [".html",".htm",".tpl",".inc",".dna"],
             "configuration": "./language-configuration.json"
         }],

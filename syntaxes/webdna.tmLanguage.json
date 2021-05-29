@@ -26,7 +26,7 @@
 		},
 		"contexts-valid": {
 			"patterns": [{
-				"begin": "(?i)(\\[)\\b(applescript|capitalize|countchars|ddesend|dos|html1|html2|html3|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
+				"begin": "(?i)(\\[)\\b(applescript|capitalize|countchars|ddesend|dos|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -42,7 +42,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)\\b(applescript|capitalize|countchars|ddesend|dos|html1|html2|html3|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
+				"begin": "(?i)(\\[/)\\b(applescript|capitalize|countchars|ddesend|dos|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -62,7 +62,22 @@
 		"functions-valid":{
 			"patterns": []
 		},
-		"keywords": {
+		"keywords":{
+			"patterns": [
+				{ "include": "#keywords-valid" },
+				{ "include": "#keywords-depreciated" }
+			]
+		},
+		"keywords-conditional":{
+			"patterns": [
+				{ "include": "#keywords-conditional-depreciated" },
+				{ "include": "#keywords-conditional-valid" }
+			]
+		},
+		"keywords-conditional-depreciated":{
+			"patterns": []
+		},
+		"keywords-conditional-valid":{
 			"patterns": [{
 				"begin": "(?i)(\\[)\\b(case|hideif|if|showif|switch)\\b(?=\\s|\\])",
 				"beginCaptures": {
@@ -112,7 +127,57 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				}
+			}]
+		},
+		"keywords-depreciated":{
+			"patterns": [
+				{ "include": "#keywords-conditional-depreciated" },
+				{ "include": "#keywords-flow-depreciated" }
+			]
+		},
+		"keywords-flow":{
+			"patterns": [
+				{ "include": "#keywords-flow-depreciated" },
+				{ "include": "#keywords-flow-valid" }
+			]
+		},
+		"keywords-flow-depreciated":{
+			"patterns": [{
+				"begin": "(?i)(\\[)(html1|html2|html3)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "invalid.deprecated.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
 			},{
+				"begin": "(?i)(\\[/)(html1|html2|html3)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "invalid.deprecated.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			}]
+		},
+		"keywords-flow-valid":{
+			"patterns": [{
 				"begin": "(?i)(\\[)(return)(?=\\])",
 				"beginCaptures": {
 					"1": {
@@ -178,6 +243,12 @@
 					}
 				}
 			}]
+		},
+		"keywords-valid": {
+			"patterns": [
+				{ "include": "#keywords-conditional-valid" },
+				{ "include": "#keywords-flow-valid" }
+			]
 		},
 		"strings": {
 			"patterns": [{
