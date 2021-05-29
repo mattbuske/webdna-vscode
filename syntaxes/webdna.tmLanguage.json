@@ -8,12 +8,34 @@
 			"patterns": [
 				{ "include": "#comments" },
 				{ "include": "#keywords" },
+				{ "include": "#storage" },
 				{ "include": "#contexts-valid" },
 				{ "include": "#functions-valid" },
 				{ "include": "#tags-valid" },
 				{ "include": "#strings" }
 			]
 		},
+
+		"parameters":{
+			"patterns": [
+				{
+					"begin": "(multi|s(cope|how))(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "entity.other.parameter-name.webdna"
+					  }
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				}
+			]
+		},
+
+
 		"comments":{
 			"begin": "\\[!\\]",
 			"captures": {
@@ -24,6 +46,8 @@
 			"end": "\\[\/!\\]",
 			"name": "comment.block.webdna"
 		},
+
+
 		"contexts-valid": {
 			"patterns": [{
 				"begin": "(?i)(\\[)\\b(applescript|capitalize|countchars|ddesend|dos|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
@@ -59,9 +83,12 @@
 				}
 			}]
 		},
+
 		"functions-valid":{
 			"patterns": []
 		},
+
+
 		"keywords":{
 			"patterns": [
 				{ "include": "#keywords-valid" },
@@ -79,7 +106,39 @@
 		},
 		"keywords-conditional-valid":{
 			"patterns": [{
-				"begin": "(?i)(\\[)\\b(case|hideif|if|showif|switch)\\b(?=\\s|\\])",
+				"begin": "(?i)(\\[)\\b(case|switch)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.conditional.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ 
+					"begin": "(value)(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "storage.type.parameter.webdna"
+					  }
+					},
+					"comment": "WebDNA case/switch parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				},{ 
+					"include": "#webdna"
+				}]
+			},{
+				"begin": "(?i)(\\[)\\b(hideif|if|showif)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -225,7 +284,7 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				},
-				"patterns": [{ "include": "#webdna" }]
+				"patterns": [{ "include": "#parameters" }]
 			},{
 				"begin": "(?i)(\\[/)(redirect)(?=\\s|\\])",
 				"beginCaptures": {
@@ -250,6 +309,117 @@
 				{ "include": "#keywords-flow-valid" }
 			]
 		},
+
+		"parameter-interior": {
+			"patterns": [{
+				"begin": "=",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.separator.key-value.webdna"
+					}
+				},
+				"end": "(?<=[^\\s=])(?!\\s*=)|(?=\\])",
+				"patterns": [
+					{ "include": "#webdna" }
+				]
+			}]
+		},
+
+
+
+		"storage": {
+			"patterns": [{
+				"begin": "(?i)(\\[)\\b(text)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(multi|s(ecure|cope|how))(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "storage.type.parameter.webdna"
+					  }
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				}]
+			},{
+				"begin": "(?i)(\\[)\\b(math)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(s(ecure|cope|how))(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "storage.type.parameter.webdna"
+					  }
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				},{
+					"begin": "(date|time)(?![\\w:-])",
+					"beginCaptures": {
+					  "0": {
+						"name": "storage.type.parameter.webdna"
+					  }
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+					  { "include": "#webdna" }
+					]
+				}]
+			},{
+				"begin": "(?i)(\\[/)\\b(text|math)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			}]
+		},
+
 		"strings": {
 			"patterns": [{
 				"name": "string.quoted.double.webdna",
@@ -299,40 +469,7 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				},
-				"patterns": [{ "include": "#webdna" }]
-			},{
-				"begin": "(?i)(\\[)\\b(text|math)\\b(?=\\s|\\])",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.definition.tag.begin.webdna"
-					},
-					"2": {
-						"name": "storage.type.webdna"
-					}
-				},
-				"end": "\\]",
-				"endCaptures": {
-					"0": {
-						"name": "punctuation.definition.tag.end.webdna"
-					}
-				},
-				"patterns": [{ "include": "#webdna" }]
-			},{
-				"begin": "(?i)(\\[/)\\b(text|math)\\b(?=\\])",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.definition.tag.begin.webdna"
-					},
-					"2": {
-						"name": "storage.type.webdna"
-					}
-				},
-				"end": "\\]",
-				"endCaptures": {
-					"0": {
-						"name": "punctuation.definition.tag.end.webdna"
-					}
-				}
+				"patterns": [{ "include": "#parameters" }]
 			},{
 				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
 				"beginCaptures": {
