@@ -4,8 +4,8 @@
     - Updated patterns to recursivly apply patterns to correctly stylize tags inside tags
     - Updated various scope selectors
     - Added support for the highlighting of:
-        * global tags: date, password, random, time, username
-        * keyword tags: if, else, then
+        * global tags: username, authenticate, calcfilecrc32, clearlineitems, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, date, delete, deletefile, deletefolder, filecompare, getcookie, getmimeheader, include, lookup, movefile, password, protect, purchase, random, removelineitem, renamefile, setcookie, setmimeheader, time, validcard, findstring
+        * keyword tags: if, else, then, redirect
 
 ## (05/27/2021) v-0.0.1:
     - Added support for block comments ([!][/!]) in the language configuration

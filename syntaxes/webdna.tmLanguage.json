@@ -144,6 +144,39 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				}
+			},{
+				"begin": "(?i)(\\[)(redirect)(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.flow.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ "include": "#webdna" }]
+			},{
+				"begin": "(?i)(\\[/)(redirect)(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.flow.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
 			}]
 		},
 		"strings": {
@@ -179,6 +212,23 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				}
+			},{
+				"begin": "(?i)(\\[)\\b(authenticate|calcfilecrc32|clearlineitems|closedatabase|commitdatabase|copyfile|copyfolder|createfolder|date|delete|deletefile|deletefolder|filecompare|getcookie|getmimeheader|include|lookup|movefile|protect|purchase|random|removelineitem|renamefile|setcookie|setmimeheader|time|validcard|findstring)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ "include": "#webdna" }]
 			},{
 				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
 				"beginCaptures": {
@@ -228,23 +278,6 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				}
-			},{
-				"begin": "(?i)(\\[)\\b(date|random|time)\\b(?=\\s|\\])",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.definition.tag.begin.webdna"
-					},
-					"2": {
-						"name": "support.function.webdna"
-					}
-				},
-				"end": "\\]",
-				"endCaptures": {
-					"0": {
-						"name": "punctuation.definition.tag.end.webdna"
-					}
-				},
-				"patterns": [{ "include": "#webdna" }]
 			}]
 		}
 	}
