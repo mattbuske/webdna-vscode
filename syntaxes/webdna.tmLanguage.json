@@ -2,41 +2,148 @@
 	"scopeName": "source.webdna",
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "WebDNA",
-	"patterns": [
-		{ "include": "#comments" },
-		{ "include": "#functions" },
-		{ "include": "#contexts" },
-		{ "include": "#keywords" },
-		{ "include": "#strings" },
-		{ "include": "#tags" }
-	],
+	"patterns": [ { "include": "#webdna" } ],
 	"repository": {
-		"keywords": {
-			"patterns": [{
-					"name": "variable.language.webdna",
-					"match": "\\[\\/?\\b(?i)(text|math)\\b.*?\\]"
-				}
+		"webdna":{
+			"patterns": [
+				{ "include": "#comments" },
+				{ "include": "#keywords" },
+				{ "include": "#contexts-valid" },
+				{ "include": "#functions-valid" },
+				{ "include": "#tags-valid" },
+				{ "include": "#strings" }
 			]
 		},
-		"contexts": {
-			"patterns":[{
-				"name": "variable.language.webdna",
-				"match": "\\[\\/?\\b(?i)(founditems|return|url)\\b\\]"
-			}]
+		"comments":{
+			"begin": "\\[!\\]",
+			"captures": {
+				"0": {
+					"name": "punctuation.definition.comment.webdna"
+				}
+			},
+			"end": "\\[\/!\\]",
+			"name": "comment.block.webdna"
 		},
-		"tags": {
+		"contexts-valid": {
 			"patterns": [{
-				"name": "variable.webdna",
-				"match": "\\[([^\\[\\]]*)\\]"
-			}]
-		},
-		"functions":{
-			"patterns": [{
-				"name": "support.function.webdna",
-				"match": "\\[\\b(?i)(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b\\]"
+				"begin": "(?i)(\\[)(url)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "entity.name.tag.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
 			},{
-				"name": "support.function.webdna",
-				"match": "\\[\\b(?i)(date|random|time)\\b.*?\\]"
+				"begin": "(?i)(\\[/)(url)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "entity.name.tag.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			}]
+		},
+		"functions-valid":{
+			"patterns": []
+		},
+		"keywords": {
+			"patterns": [{
+				"begin": "(?i)(\\[)\\b(if)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.conditional.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ "include": "#webdna" }]
+			},{
+				"begin": "(?i)(\\[)(else|then)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.conditional.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[/)\\b(if|else|then)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.conditional.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[)(return)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.flow.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[/)(return)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.flow.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
 			}]
 		},
 		"strings": {
@@ -55,12 +162,89 @@
 				}]
 			}]
 		},
-		"comments":{
+		"tags-valid":{
 			"patterns": [{
-				"name": "comment.block.webdna",
-				"begin": "\\[!\\]",
-				"end": "\\[\/!\\]",
-				"patterns": []
+				"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "variable.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[)\\b(text|math)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ "include": "#webdna" }]
+			},{
+				"begin": "(?i)(\\[/)\\b(text|math)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "storage.type.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
+				"begin": "(?i)(\\[)\\b(date|random|time)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{ "include": "#webdna" }]
 			}]
 		}
 	}
