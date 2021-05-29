@@ -10,7 +10,6 @@
 				{ "include": "#keywords" },
 				{ "include": "#storage" },
 				{ "include": "#contexts-valid" },
-				{ "include": "#functions-valid" },
 				{ "include": "#tags-valid" },
 				{ "include": "#strings" }
 			]
@@ -83,11 +82,6 @@
 				}
 			}]
 		},
-
-		"functions-valid":{
-			"patterns": []
-		},
-
 
 		"keywords":{
 			"patterns": [
