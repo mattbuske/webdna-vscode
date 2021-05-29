@@ -26,7 +26,7 @@
 		},
 		"contexts-valid": {
 			"patterns": [{
-				"begin": "(?i)(\\[)(url)(?=\\])",
+				"begin": "(?i)(\\[)\\b(applescript|capitalize|countchars|ddesend|dos|html1|html2|html3|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -42,7 +42,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)(url)(?=\\])",
+				"begin": "(?i)(\\[/)\\b(applescript|capitalize|countchars|ddesend|dos|html1|html2|html3|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"

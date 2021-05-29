@@ -6,6 +6,7 @@
     - Added support for the highlighting of:
         * global tags: username, authenticate, calcfilecrc32, clearlineitems, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, date, delete, deletefile, deletefolder, filecompare, getcookie, getmimeheader, include, lookup, movefile, password, protect, purchase, random, removelineitem, renamefile, setcookie, setmimeheader, time, validcard, findstring
         * keyword tags: if, else, then, redirect
+        * contexts: applescript, capitalize, countchars, ddesend, dos, html1, html2, html3, input, interpret, listdatabases, lineitems, raw, shell, spawn, unurl
 
 ## (05/27/2021) v-0.0.1:
     - Added support for block comments ([!][/!]) in the language configuration
