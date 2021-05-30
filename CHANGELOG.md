@@ -7,6 +7,8 @@
         * Depreciated keyword tags: html1, html2, html3
         * Storage tags: text, math, function
         * Storage parameters for tags: text, math, function
+        * Support tags: authenticate, calcfilecrc32, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, deletefile, deletefolder, movefile, renamefile
+        * Support parameters for tags: authenticate, calcfilecrc32, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, deletefile, deletefolder, movefile, renamefile
 
 ## (05/28/2021) v-0.0.2:
     - Updated patterns to recursivly apply patterns to correctly stylize tags inside tags

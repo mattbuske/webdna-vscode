@@ -4,21 +4,22 @@
 	"name": "WebDNA",
 	"patterns": [ { "include": "#webdna" } ],
 	"repository": {
-		"webdna":{
+		"webdna": {
 			"patterns": [
 				{ "include": "#comments" },
 				{ "include": "#keywords" },
 				{ "include": "#storage" },
+				{ "include": "#support" },
 				{ "include": "#contexts-valid" },
 				{ "include": "#tags-valid" },
 				{ "include": "#strings" }
 			]
 		},
 
-		"parameters":{
+		"parameters": {
 			"patterns": [
 				{
-					"begin": "(multi|s(cope|how))(?![\\w:-])",
+					"begin": "([\\s|&])(multi|s(cope|how))(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
 						"name": "entity.other.parameter-name.webdna"
@@ -34,8 +35,7 @@
 			]
 		},
 
-
-		"comments":{
+		"comments": {
 			"begin": "\\[!\\]",
 			"captures": {
 				"0": {
@@ -45,7 +45,6 @@
 			"end": "\\[\/!\\]",
 			"name": "comment.block.webdna"
 		},
-
 
 		"contexts-valid": {
 			"patterns": [{
@@ -82,23 +81,22 @@
 				}
 			}]
 		},
-
-		"keywords":{
+		"keywords": {
 			"patterns": [
 				{ "include": "#keywords-valid" },
 				{ "include": "#keywords-depreciated" }
 			]
 		},
-		"keywords-conditional":{
+		"keywords-conditional": {
 			"patterns": [
 				{ "include": "#keywords-conditional-depreciated" },
 				{ "include": "#keywords-conditional-valid" }
 			]
 		},
-		"keywords-conditional-depreciated":{
+		"keywords-conditional-depreciated": {
 			"patterns": []
 		},
-		"keywords-conditional-valid":{
+		"keywords-conditional-valid": {
 			"patterns": [{
 				"begin": "(?i)(\\[)\\b(case|switch)\\b(?=\\s|\\])",
 				"beginCaptures": {
@@ -115,20 +113,18 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				},
-				"patterns": [{ 
-					"begin": "(value)(?![\\w:-])",
+				"patterns": [{
+					"begin": "([\\s|&])(value)(?![\\w:-])",
 					"beginCaptures": {
-					  "0": {
-						"name": "variable.parameter.webdna"
-					  }
+						"0": {
+							"name": "variable.parameter.webdna"
+						}
 					},
 					"comment": "WebDNA case/switch parameters",
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$1.webdna",
-					"patterns": [
-					  { "include": "#parameter-interior" }
-					]
-				},{ 
+					"patterns": [{ "include": "#parameter-interior" }]
+				},{
 					"include": "#webdna"
 				}]
 			},{
@@ -182,19 +178,19 @@
 				}
 			}]
 		},
-		"keywords-depreciated":{
+		"keywords-depreciated": {
 			"patterns": [
 				{ "include": "#keywords-conditional-depreciated" },
 				{ "include": "#keywords-flow-depreciated" }
 			]
 		},
-		"keywords-flow":{
+		"keywords-flow": {
 			"patterns": [
 				{ "include": "#keywords-flow-depreciated" },
 				{ "include": "#keywords-flow-valid" }
 			]
 		},
-		"keywords-flow-depreciated":{
+		"keywords-flow-depreciated": {
 			"patterns": [{
 				"begin": "(?i)(\\[)(html1|html2|html3)(?=\\])",
 				"beginCaptures": {
@@ -229,7 +225,7 @@
 				}
 			}]
 		},
-		"keywords-flow-valid":{
+		"keywords-flow-valid": {
 			"patterns": [{
 				"begin": "(?i)(\\[)(return)(?=\\])",
 				"beginCaptures": {
@@ -319,8 +315,6 @@
 			}]
 		},
 
-
-
 		"storage": {
 			"patterns": [{
 				"begin": "(?i)(\\[)\\b(function)\\b(?=\\s|\\])",
@@ -339,11 +333,11 @@
 					}
 				},
 				"patterns": [{
-					"begin": "(name|preparse|scope)(?![\\w:-])",
+					"begin": "([\\s|&])(name|preparse|scope)(?![\\w:-])",
 					"beginCaptures": {
-					  "0": {
-						"name": "variable.parameter.webdna"
-					  }
+						"0": {
+							"name": "variable.parameter.webdna"
+						}
 					},
 					"comment": "WebDNA parameters",
 					"end": "(?=\\s*+[^=\\s])",
@@ -385,7 +379,7 @@
 					}
 				},
 				"patterns": [{
-					"begin": "(multi|s(ecure|cope|how))(?![\\w:-])",
+					"begin": "([\\s|&])(multi|s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
 						"name": "variable.parameter.webdna"
@@ -415,7 +409,7 @@
 					}
 				},
 				"patterns": [{
-					"begin": "(s(ecure|cope|how))(?![\\w:-])",
+					"begin": "([\\s|&])(s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
 						"name": "variable.parameter.webdna"
@@ -428,7 +422,7 @@
 					  { "include": "#parameter-interior" }
 					]
 				},{
-					"begin": "(date|time)(?![\\w:-])",
+					"begin": "([\\s|&])(date|time)(?![\\w:-])",
 					"beginCaptures": {
 					  "0": {
 						"name": "variable.parameter.webdna"
@@ -476,25 +470,27 @@
 				}]
 			}]
 		},
-		"tags-valid":{
+		"support": {
+			"patterns": [
+				{ "include": "#support-function" }
+			]
+		},
+		"support-function": {
+			"patterns": [
+				{
+					"include": "#support-function-depreciated"
+				},
+				{
+					"include": "#support-function-valid"
+				}
+			]
+		},
+		"support-function-depreciated": {
+			"patterns": []
+		},
+		"support-function-valid": {
 			"patterns": [{
-				"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.definition.tag.begin.webdna"
-					},
-					"2": {
-						"name": "support.function.webdna"
-					}
-				},
-				"end": "\\]",
-				"endCaptures": {
-					"0": {
-						"name": "punctuation.definition.tag.end.webdna"
-					}
-				}
-			},{
-				"begin": "(?i)(\\[)\\b(authenticate|calcfilecrc32|clearlineitems|closedatabase|commitdatabase|copyfile|copyfolder|createfolder|date|delete|deletefile|deletefolder|filecompare|getcookie|getmimeheader|include|lookup|movefile|protect|purchase|random|removelineitem|renamefile|setcookie|setmimeheader|time|validcard|findstring)\\b(?=\\s|\\])",
+				"begin": "(?i)(\\[)\\b(authenticate)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -509,15 +505,31 @@
 						"name": "punctuation.definition.tag.end.webdna"
 					}
 				},
-				"patterns": [{ "include": "#parameters" }]
+				"patterns": [{
+					"begin": "([\\s|&])(realm)(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+						  { "include": "#parameter-interior" }
+					]
+				}]
 			},{
-				"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
+				"begin": "(?i)(\\[)\\b(calcfilecrc32|deletefile)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
 					},
 					"2": {
-						"name": "variable.webdna"
+						"name": "support.function.webdna"
 					}
 				},
 				"end": "\\]",
@@ -525,8 +537,188 @@
 					"0": {
 						"name": "punctuation.definition.tag.end.webdna"
 					}
-				}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(file)(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [{ "include": "#parameter-interior" }]
+				}]
+			},{
+				"begin": "(?i)(\\[)\\b(createfolder|deletefolder)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(path)(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+						{
+							"include": "#parameter-interior"
+						}
+					]
+				}]
+			},{
+				"begin": "(?i)(\\[)\\b(copyfile|copyfolder|movefile|renamefile)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(to|from)(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+						{
+							"include": "#parameter-interior"
+						}
+					]
+				}]
+			},{
+				"begin": "(?i)(\\[)\\b(closedatabase|commitdatabase)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(db)(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$1.webdna",
+					"patterns": [
+						{
+							"include": "#parameter-interior"
+						}
+					]
+				}]
 			}]
+		},
+		"tags-valid": {
+			"patterns": [
+				{
+					"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					}
+				},
+				{
+					"begin": "(?i)(\\[)\\b(clearlineitems|date|delete|filecompare|getcookie|getmimeheader|include|lookup|protect|purchase|random|removelineitem|setcookie|setmimeheader|time|validcard|findstring)\\b(?=\\s|\\])",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [
+						{
+							"include": "#parameters"
+						}
+					]
+				},
+				{
+					"begin": "(?i)(\\[)([^ ]*?)(?=\\])",
+					"beginCaptures": {
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "variable.webdna"
+						}
+					},
+					"end": "\\]",
+					"endCaptures": {
+						"0": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					}
+				}
+			]
 		}
 	}
 }
