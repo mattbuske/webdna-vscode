@@ -3,12 +3,12 @@
 ## (05/29/2021) v-0.0.3:
     - Added/updated support for the highlighting of:
         * Keyword tags: switch, case, hideif, showif, if, then, else, default
-        * Keyword parameters for tags: switch, case
+        * Keyword parameters for tags: switch, case, redirect
         * Depreciated keyword tags: html1, html2, html3
         * Storage tags: text, math, function
         * Storage parameters for tags: text, math, function
-        * Support tags: authenticate, calcfilecrc32, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, deletefile, deletefolder, movefile, renamefile
-        * Support parameters for tags: authenticate, calcfilecrc32, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, deletefile, deletefolder, movefile, renamefile
+        * Support tags: authenticate, calcfilecrc32, clearlineitems, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, date, deletefile, deletefolder, getcookie, getmimeheader, movefile, protect, purchase, random, renamefile, removelineitem, setcookie, setmimeheader, time
+        * Support parameters for tags: authenticate, calcfilecrc32, clearlineitems, closedatabase, commitdatabase, copyfile, copyfolder, createfolder, date, deletefile, deletefolder, getcookie, getmimeheader, movefile, protect, purchase, random, renamefile, removelineitem, setcookie, setmimeheader, time
 
 ## (05/28/2021) v-0.0.2:
     - Updated patterns to recursivly apply patterns to correctly stylize tags inside tags
