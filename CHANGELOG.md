@@ -1,5 +1,8 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (06/02/2021) v-0.0.4:
+    - Added basic support for html, css, sql, xml, javascript, and json
+
 ## (05/29/2021) v-0.0.3:
     - Added/updated support for the highlighting of:
         * Keyword tags: switch, case, hideif, showif, if, then, else, default

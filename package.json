@@ -2,7 +2,7 @@
     "name": "webdna",
     "displayName": "WebDNA",
     "description": "WebDNA File",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "EduCloud",
     "engines": {
         "vscode": "^1.49.0"
@@ -19,8 +19,16 @@
         }],
         "grammars": [{
             "language": "webdna",
+            "path": "./syntaxes/webdna.tmLanguage.json",
             "scopeName": "source.webdna",
-            "path": "./syntaxes/webdna.tmLanguage.json"
+            "embeddedLanguages": {
+                "text.html": "html",
+                "source.css": "css",
+                "source.sql": "sql",
+                "text.xml": "xml",
+                "source.js": "javascript",
+                "source.json": "json"
+            }
         }]
     }
 }
