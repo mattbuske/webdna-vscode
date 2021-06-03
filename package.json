@@ -2,7 +2,7 @@
     "name": "webdna",
     "displayName": "WebDNA",
     "description": "WebDNA File",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "publisher": "EduCloud",
     "engines": {
         "vscode": "^1.49.0"

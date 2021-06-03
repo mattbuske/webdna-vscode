@@ -1,5 +1,12 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (06/02/2021) v-0.0.5:
+    - Updated parameter highlighting to be case insensitive
+    - Fixed parameter scope issues
+    - Added/updated support for the highlighting of:
+        * Support tags: validcard, findstring, filecompare
+        * Support parameters for tags: validcard, findstring, filecompare
+
 ## (06/02/2021) v-0.0.4:
     - Added basic support for html, css, sql, xml, javascript, and json
 
