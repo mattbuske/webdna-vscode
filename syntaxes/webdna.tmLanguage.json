@@ -17,6 +17,7 @@
 				{ "include": "#keywords" },
 				{ "include": "#storage" },
 				{ "include": "#support" },
+				{ "include": "#sql" },
 				{ "include": "#contexts-valid" },
 				{ "include": "#tags-valid" },
 				{ "include": "#strings" }
@@ -28,6 +29,9 @@
 				{
 					"begin": "(?i)([\\s|&])(multi|s(cope|how))(?![\\w:-])",
 					"beginCaptures": {
+					  "1": {
+						"name": "variable.parameter.and.webdna"
+					  },
 					  "2": {
 						"name": "entity.other.parameter-name.webdna"
 					  }
@@ -50,7 +54,10 @@
 				}
 			},
 			"end": "\\[\/!\\]",
-			"name": "comment.block.webdna"
+			"name": "comment.block.webdna",
+			"patterns": [
+				{ "include": "#comments" }
+			]
 		},
 
 		"contexts-valid": {
@@ -71,7 +78,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)\\b(applescript|capitalize|countchars|ddesend|dos|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
+				"begin": "(?i)(\\[\/)\\b(applescript|capitalize|countchars|ddesend|dos|input|interpret|listdatabases|lineitems|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -88,6 +95,7 @@
 				}
 			}]
 		},
+
 		"keywords": {
 			"patterns": [
 				{ "include": "#keywords-valid" },
@@ -123,6 +131,9 @@
 				"patterns": [{
 					"begin": "(?i)([\\s|&])(value)(?![\\w:-])",
 					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
 						"2": {
 							"name": "variable.parameter.webdna"
 						}
@@ -168,7 +179,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)\\b(case|default|else|hideif|if|then|showif|switch)\\b(?=\\s|\\])",
+				"begin": "(?i)(\\[\/)\\b(case|default|else|hideif|if|then|showif|switch)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -215,7 +226,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)(html1|html2|html3)(?=\\])",
+				"begin": "(?i)(\\[\/)(html1|html2|html3)(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -250,7 +261,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[/)(return)(?=\\])",
+				"begin": "(?i)(\\[\/)(return)(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -304,20 +315,7 @@
 			]
 		},
 
-		"parameter-interior": {
-			"patterns": [{
-				"begin": "=",
-				"beginCaptures": {
-					"0": {
-						"name": "punctuation.separator.key-value.webdna"
-					}
-				},
-				"end": "(?<=[^\\s=])(?!\\s*=)|(?=\\])",
-				"patterns": [
-					{ "include": "#webdna" }
-				]
-			}]
-		},
+		
 
 		"storage": {
 			"patterns": [{
@@ -339,6 +337,9 @@
 				"patterns": [{
 					"begin": "(?i)([\\s|&])(name|preparse|scope)(?![\\w:-])",
 					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
 						"2": {
 							"name": "variable.parameter.webdna"
 						}
@@ -351,7 +352,7 @@
 					]
 				}]
 			},{
-				"begin": "(?i)(\\[/)\\b(function)\\b(?=\\])",
+				"begin": "(?i)(\\[\/)\\b(function)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -385,9 +386,12 @@
 				"patterns": [{
 					"begin": "(?i)([\\s|&])(multi|s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
-					  "2": {
-						"name": "variable.parameter.webdna"
-					  }
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+					  	"2": {
+							"name": "variable.parameter.webdna"
+					  	}
 					},
 					"comment": "WebDNA parameters",
 					"end": "(?=\\s*+[^=\\s])",
@@ -415,9 +419,12 @@
 				"patterns": [{
 					"begin": "(?i)([\\s|&])(s(ecure|cope|how))(?![\\w:-])",
 					"beginCaptures": {
-					  "2": {
-						"name": "variable.parameter.webdna"
-					  }
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+					  	"2": {
+							"name": "variable.parameter.webdna"
+					  	}
 					},
 					"comment": "WebDNA parameters",
 					"end": "(?=\\s*+[^=\\s])",
@@ -428,9 +435,12 @@
 				},{
 					"begin": "(?i)([\\s|&])(date|time)(?![\\w:-])",
 					"beginCaptures": {
-					  "2": {
-						"name": "variable.parameter.webdna"
-					  }
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+					  	"2": {
+							"name": "variable.parameter.webdna"
+					  	}
 					},
 					"comment": "WebDNA parameters",
 					"end": "(?=\\s*+[^=\\s])",
@@ -440,7 +450,7 @@
 					]
 				}]
 			},{
-				"begin": "(?i)(\\[/)\\b(text|math)\\b(?=\\])",
+				"begin": "(?i)(\\[\/)\\b(text|math)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -474,6 +484,7 @@
 				}]
 			}]
 		},
+
 		"support": {
 			"patterns": [
 				{ "include": "#support-function" }
@@ -494,6 +505,22 @@
 		},
 		"support-function-valid": {
 			"patterns": [{
+				"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			},{
 				"begin": "(?i)(\\[)\\b(authenticate)\\b(?=\\s|\\])",
 				"beginCaptures": {
 					"1": {
@@ -1006,11 +1033,53 @@
 				}]
 			}]
 		},
-		"tags-valid": {
+
+		"parameter-interior": {
+			"patterns": [{
+				"begin": "=",
+				"beginCaptures": {
+					"0": {
+						"name": "punctuation.separator.key-value.webdna"
+					}
+				},
+				"end": "(?<=[^\\s=])(?=&|\\])",
+				"patterns": [
+					{ "include": "#webdna" }
+				]
+			}]
+		},
+
+		"sql": {
 			"patterns": [
 				{
-					"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
+					"include": "#sql-depreciated"
+				},
+				{
+					"include": "#sql-valid"
+				}
+			]
+		},
+		"sql-depreciated": {
+			"patterns": [{
+				"comment": "WebDNA SQLConnect Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:sqlconnect)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:sqlconnect))\\b",
 					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlconnect.start.webdna"
+						},
 						"1": {
 							"name": "punctuation.definition.tag.begin.webdna"
 						},
@@ -1018,13 +1087,230 @@
 							"name": "support.function.webdna"
 						}
 					},
-					"end": "\\]",
+					"end": "(/)((?i:sqlconnect))(\\])",
 					"endCaptures": {
 						"0": {
+							"name": "meta.tag.metadata.sqlconnect.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						},
+						"3": {
 							"name": "punctuation.definition.tag.end.webdna"
 						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(&?)(?i:(d(atabase|btype)|p(ort|wd)|host|uid|conn_var|var))(?![\\w:-])",
+							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.sqlconnect.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlconnect.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:sqlconnect))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlconnect.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"begin": "\\G",
+								"end": "(?=\\[/(?i:sqlconnect))",
+								"patterns": [{
+									"comment": "WebDNA SQLConnect Internal Tags",
+									"begin": "(\\[)(?i:(sql_(host|server(type|ver)|clientver|dbname)))(?=\\])",
+									"beginCaptures": {
+										"1": {
+											"name": "punctuation.definition.tag.begin.webdna"
+										},
+										"2": {
+											"name": "variable.language.sqlconnect.webdna"
+										}
+									},
+									"name": "meta.variable.sqlconnect.$2.webdna",
+									"end": "\\]",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.tag.end.webdna"
+										}
+									}
+								},{
+									"include": "#webdna"
+								},
+								{ 
+									"include": "text.html.derivative" 
+								}]
+							}]
+						}]
+					}]
+				}]
+			},{
+				"comment": "WebDNA SQLExecute Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:sqlexecute)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
 					}
 				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:sqlexecute))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlexecute.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						}
+					},
+					"end": "(/)((?i:sqlexecute))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlexecute.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(&?)(?i:(result_var|ref|conn_ref|var))(?![\\w:-])",
+							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.sqlexecute.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlexecute.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:sqlexecute))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlexecute.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"begin": "\\G",
+								"end": "(?=\\[/(?i:sqlexecute))",
+								"patterns": [{
+									"include": "#webdna"
+								},
+								{ 
+									"include": "source.sql" 
+								}]
+							}]
+						}]
+					}]
+				}]
+			}]
+		},
+		"sql-valid": {
+			"patterns": [{
+				"begin": "(?i)(\\[)\\b(sql)\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [
+					{
+						"include": "#parameters"
+					}
+				]
+			},{
+				"begin": "(?i)(\\[\/)\\b(sql)\\b(?=\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				}
+			}]
+		},
+
+		"tags-valid": {
+			"patterns": [
 				{
 					"begin": "(?i)(\\[)\\b(delete|include|lookup)\\b(?=\\s|\\])",
 					"beginCaptures": {

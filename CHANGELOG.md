@@ -1,5 +1,13 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (06/03/2021) v-0.0.6:
+    - Fixed nested comment highlighting
+    - Fixed issues labeling some capture scopes
+    - Added repository to package.json
+    - Added support for the contexts: sqlconnect and sqlexecute
+    - Added support for highlighting webdna tags only available in the sqlconnect context
+    - Added support for highlighting sql code in the sqlexecute context
+
 ## (06/02/2021) v-0.0.5:
     - Updated parameter highlighting to be case insensitive
     - Fixed parameter scope issues
