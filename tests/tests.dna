@@ -1,0 +1,551 @@
+[!] Comment Blocks [/!]
+[!]
+    Any Text to be Hidden 
+    This text will be hidden from web visitors
+    With WebDNA [thisurl] and [thisurlplusget]
+[/!]
+
+[!] AddFields [/!]
+[AddFields db=addfields_test.db]EMAIL=us.here.com&PHONE=123-1235[/AddFields]
+
+[!] AddLineItem [/!]
+
+[!] Append [/!]
+
+[!] AppendFile [/!]
+
+[!] AppleScript [/!]
+
+[!] ArrayGet [/!]
+
+[!] ArraySet [/!]
+
+[!] Authenticate [/!]
+[Authenticate]
+[Authenticate realm=Some Text]
+
+[!] BoldWords [/!]
+[BoldWords words=[wodescriptiondata]][description][/BoldWords]
+
+[!] BioType [/!]
+
+[!] BrowserName [/!]
+[BrowserName]
+
+[!] CalcFileCRC32 [/!]
+[CalcFileCRC32 file=somefolder/[StarShip]]
+[CalcFileCRC32 path=somefolder/[StarShip]]
+
+[!] Capitalize [/!]
+[Capitalize]hello[/Capitalize]
+
+[!] Cart [/!]
+[Cart]
+
+[!] ClearLineItems [/!]
+[ClearLineItems]
+[ClearLineItems cart=[cartID]]
+[ClearLineItems file=/folder/[cartID]]
+[ClearLineItems path=/folder/[cartID]]
+
+[!] CloseDatabase [/!]
+[CloseDatabase db=FileName]
+
+[!] Command [/!]
+[Command]
+
+[!] CommitDatabase [/!]
+[CommitDatabase db=FileName]
+
+[!] ConvertChars [/!]
+[ConvertChars]Some Text that contains © or other unusual letters[/ConvertChars]
+
+[!] ConvertWords [/!]
+[ConvertWords db=glossary.db]A HTTP request first uses DNS to look up the ip address[/ConvertWords]
+
+[!] CopyFile [/!]
+[CopyFile from=fredFolder&to=[wilmaFolder]]
+[CopyFile to=[wilmaFolder]&from=fredFolder]
+
+[!] CopyFolder [/!]
+[CopyFolder from=fredFolder&to=[wilmaFolder]]
+[CopyFolder to=[wilmaFolder]&from=fredFolder]
+
+[!] CountChars [/!]
+[CountChars]Some Text[/CountChars]
+
+[!] CountWords [/!]
+[CountWords Delimiters= ,]This is a big long sentence, don't you think?[/CountWords]
+
+[!] CreateFolder [/!]
+[CreateFolder [baseDir]/Troopers]
+[CreateFolder path=[baseDir]/Troopers]
+
+[!] Date [/!]
+[Date format=%m/%d/%Y]
+
+[!] DDEConnect | DDESend [/!]
+[DDEConnect program=PCAuthorize&topic=GetBatches]
+[DDESend]Tela00001031 1[/DDESend]
+[/DDEConnect]
+
+[!] This Should Not Highlight As They Are Outside the Context! [/!]
+[DDESend]Tela00001031 1[/DDESend]
+
+[!] Decrypt [/!]
+[Decrypt seed=abcdefg];)(*&#$KLJFLKjkhegdlksdfg09814[/Decrypt]
+
+[!] Delete [/!]
+[Delete db=DatabasePath&eqNAMEdata=Fred]
+
+[!] DeleteFile [/!]
+[DeleteFile file=somefolder/[StarShip]]
+[DeleteFile path=somefolder/[StarShip]]
+
+[!] DeleteFolder [/!]
+[DeleteFolder file=somefolder/[StarShip]]
+[DeleteFolder path=somefolder/[StarShip]]
+
+[!] DOS [/!]
+[DOS]dir c:[/DOS]
+
+[!] ElapsedTime [/!]
+[ElapsedTime]
+
+[!] Encrypt [/!]
+
+[!] ExclusiveLock [/!]
+
+[!] FileCompare [/!]
+[FileCompare method=SIZE&file1=../create_tutorial.tpl&file2=../header.inc]
+[FileCompare method=DATE&file1=../create_tutorial.tpl&file2=../header.inc]
+[FileCompare method=CRC32&file1=../create_tutorial.tpl&file2=../header.inc]
+[FileCompare method=CRC32&file1crc=[crc_value]&file2=../header.inc]
+
+[!] FileInfo [/!]
+
+[!] FindString [/!]
+[FindString source=[mystring]&find=powerful]
+[FindString Source=...&Find=...&MatchCase=...&Reverse=...&StartAt=...]
+
+[!] FlushCache [/!]
+[FlushCache]
+
+[!] FlushDatabases [/!]
+[FlushDatabases]
+
+[!] Format [/!]
+
+[!] FormVariables [/!]
+
+[!] FoundItems [/!]
+
+[!] FreeMemory [/!]
+[FreeMemory]
+
+[!] Function | Return [/!]
+[Function name=Backwards]
+    [text]length=[countchars][instring][/countchars][/text]
+    [loop start=[length]&end=1&advance=-1][getchars start=[index]&end=[index]][instring][/getchars][/loop]
+    [RETURN][length][/RETURN]
+[/Function]
+
+[!] This Should Not Highlight As They Are Outside the Context! [/!]
+[RETURN]True![/RETURN]
+
+[!] GetChars [/!]
+
+[!] GetCookie [/!]
+[GETCOOKIE name=fred]
+
+[!] GetMIMEHeader [/!]
+[GETMIMEHEADER name=Accept-Language]
+
+[!] Grep [/!]
+
+[!] Hide [/!]
+
+[!] HideIf [/!]
+[HideIf [username]=Grant][Authenticate realm=User Grant][/HideIf]
+[HideIf [username]=SAGEHEN]You're not Mr. Sagehen![/HideIf]
+[HideIf [random]!45]...[/HideIf]
+[HideIf [browsername]^Mozilla]...[/HideIf]
+[HideIf [ipaddress]~245.078.013]...[/HideIf]
+[HideIf [random]<50]...[/HideIf]
+[HideIf [lastrandom]>25]...[/HideIf]
+[HideIf [index]\3]...[/HideIf]
+
+[!] HTML1 [/!]
+[HTML1]Any text you want to be seen only by older browsers that do not support tables or frames.[/HTML1]
+
+[!] HTML2 [/!]
+[HTML2]Any text you want to be seen only by browsers that support tables and frames.[/HTML2]
+
+[!] HTML3 [/!]
+[HTML3]Any text you want to be seen only by browsers that support Java.[/HTML3]
+
+[!] HTTPMethod [/!]
+[HTTPMethod]
+
+[!] If | Else | Then [/!]
+[If (("[username]"="Grant") | ([grandTotal]<100)) & ({[date]}<{2/15/2000})]
+    [Then]either username was Grant or grandTotal was < $100 and it's not Feb 15, 2000 yet[/Then]
+    [Else]The complex expression wasn't true[/Else]
+[/If]
+
+[!] These Should Not Highlight As They Are Outside the Context! [/!]
+[Then]either username was Grant or grandTotal was < $100 and it's not Feb 15, 2000 yet[/Then]
+[Else]The complex expression wasn't true[/Else]
+
+[!] Include [/!]
+[Include file=FilePath&raw=T]
+[Include file=FilePath&fromCache=F]
+[Include file=FilePath&var1=xx&var2=yy]
+[Include file=^test.inc]
+
+[!] Input [/!]
+[Input]Any Text[/Input]
+
+[!] Interpret [/!]
+[Interpret]Some Text that contains [xxx] fields[/Interpret]
+
+[!] IPAddress [/!]
+[IPAddress]
+
+[!] IsSecureClient [/!]
+[IsSecureClient]
+
+[!] JSONStore [/!]
+
+[!] LastAutonumber [/!]
+
+[!] LastRandom [/!]
+[LastRandom]
+
+[!] LineItems [/!]
+[LineItems]
+    [sku], [price], [quantity]<br>
+[/LineItems]
+
+[!] ListChars [/!]
+
+[!] ListCookies [/!]
+
+[!] ListDatabases [/!]
+[ListDatabases]
+    Name: [name]<br>
+    # Records: [numRecords]<br><hr>
+[/ListDatabases]
+
+[!] ListFields [/!]
+
+[!] ListFiles [/!]
+
+[!] ListMIMEHeaders [/!]
+
+[!] ListPath [/!]
+
+[!] ListVariables [/!]
+
+[!] ListWords [/!]
+
+[!] Lookup [/!]
+[Lookup db=databasePath&value=searchValue&lookInField=searchField&returnField=fieldName&notFound=TextIfNotFound]
+
+[!] Loop [/!]
+
+[!] LowerCase [/!]
+
+[!] Math [/!]
+[Math](4.5+6.2)/17*95-12[/Math]
+[Math]{4/7/1997}+10[/Math]
+[Math]{4/7/1997}+{02/00/0000}[/Math]
+[Math date]{4/7/1997}+10[/Math]
+[Math date]{4/7/1997}+{02/00/0000}[/Math]
+[Math date]{[date]}-{00/07/0000}[/Math]
+[Math]{12:51:02}[/Math]
+[Math time]{12:51:02}+{01:00:05}[/Math]
+[Math]x=5/3[/Math]
+[Math]x=5%3[/Math]
+[Math show=F]xyz=5/3[/Math]
+[Math]xyz[/Math]
+
+[!] Middle [/!]
+
+[!] MoveFile [/!]
+[MoveFile from=fredFolder&to=[wilmaFolder]]
+[MoveFile to=[wilmaFolder]&from=fredFolder]
+
+[!] OrderFile [/!]
+
+[!] Object [/!]
+
+[!] Password [/!]
+[Password]
+
+[!] Platform [/!]
+[Platform]
+
+[!] Product [/!]
+[Product]
+
+[!] Protect [/!]
+[Protect groups=group1,group2]
+
+[!] Purchase [/!]
+[Purchase]
+[Purchase cart=[cartID]]
+[Purchase file=/folder/[cartID]]
+[Purchase path=/folder/[cartID]]
+
+[!] Random [/!]
+[Random format=float]
+
+[!] Raw [/!]
+[Raw] Any text, including any [xxx] tags such as [date] or [delete] [/Raw]
+
+[!] Redirect [/!]
+[Redirect url=http://www.webdna.us/]
+
+[!] Referrer [/!]
+[Referrer]
+
+[!] Referer [/!]
+[Referer]
+
+[!] Regex [/!]
+
+[!] RemoveHTML [/!]
+
+[!] RemoveLineItem [/!]
+[RemoveLineItem]
+[RemoveLineItem cart=[cartID]&index=3]
+[RemoveLineItem file=/folder/[cartID]&index=3]
+[RemoveLineItem path=/folder/[cartID]&index=3]
+
+[!] Replace [/!]
+
+[!] ReplaceFoundItems [/!]
+
+[!] ReturnRaw [/!]
+
+[!] Scope [/!]
+
+[!] Search [/!]
+
+[!] SendMail [/!]
+
+[!] Session [/!]
+
+[!] SessionAlive [/!]
+
+[!] SessionDate [/!]
+
+[!] SessionEnd [/!]
+
+[!] SessionIP [/!]
+
+[!] SessionIPMatch [/!]
+
+[!] SessionLife [/!]
+
+[!] SessionStart [/!]
+
+[!] SessionTime [/!]
+
+[!] SessionUTime [/!]
+
+[!] SetCookie [/!]
+[SetCookie name=cookieName&value=cookieValue&expires=expireDate&path=/&domain=www.yourdomain.com]
+[SetCookie name=Visits&value=12&expires=Wednesday, 09-Nov-2010 23:12:40 GMT&path=/&domain=www.webdna.us]
+[SetCookie name=cookieName&value=sample&expires=[format days_to_date %A, %d-%b-%Y][math]{[date]}+7[/math][/format] [math time]{[time]}+{05:00:00}[/math] GMT&path=/&domain=www.yourserver.com]
+
+[!] SetHeader [/!]
+
+[!] SetLineItem [/!]
+
+[!] SetMIMEHeader [/!]
+[SetMIMEHeader name=headerName&value=headerValue]
+
+[!] Shell [/!]
+[Shell]ls -l[/Shell]
+
+[!] ShowIf [/!]
+[ShowIf [username]=Grant]You're allowed in![/ShowIf]
+[ShowIf [username]=SAGEHEN]Welcome Mr. Sagehen[/ShowIf]
+[ShowIf [random]!45]...[/ShowIf]
+[ShowIf [browsername]^Mozilla]...[/ShowIf]
+[ShowIf [ipaddress]~245.078.013]...[/ShowIf]
+[ShowIf [random]<50]...[/ShowIf]
+[ShowIf [lastrandom]>25]...[/ShowIf]
+[ShowIf [index]\3]...[/ShowIf]
+
+[!] ShowNext [/!]
+
+[!] Spawn [/!]
+[Spawn]
+  [ShowIf [LoopIndex]=5]
+    stuff
+  [/ShowIf]
+[/Spawn]
+
+[!] SQL [/!]
+[SQL dsn=Pubs&statement=SELECT * from Authors;]
+    Found [NumFound] items<br>
+    [FoundItems]
+        [au_lname], [au_fname], [title]<br>
+    [/FoundItems]
+[/SQL]
+
+[!] SQLConnect [/!]
+[SQLConnect dbType=My[hello]SQL&host=192.168.1.1&database=SMSITest&uid=sa&pwd=pass&conn_var=conn1&var=conn1] 
+    [SQL_HOST] - [SQL_SERVERTYPE] - [SQL_SERVERVER] - [SQL_CLIENTVER] - [SQL_DBNAME]
+    <table>
+        <tr><td>Host:</td><td>[SQL_HOST]</td></tr>
+        <tr><td>Server Version:</td><td>[SQL_SERVERVER]</td></tr>
+        <tr><td>Client Version:</td><td>[SQL_CLIENTVER]</td></tr>
+    </table>
+[/SQLConnect]
+
+[!] These Should Not Highlight As They Are Outside the Context! [/!]
+[SQL_HOST] - [SQL_SERVERTYPE] - [SQL_SERVERVER] - [SQL_CLIENTVER] - [SQL_DBNAME]
+
+[!] SQLDisconnect [/!]
+[SQLDisconnect conn_ref=theConnection]
+
+[!] SQLExecute [/!]
+[SQLExecute conn_ref=con[jeeep]n1&result_var=rs1]
+select firstName,lastName from employees WHERE [hello] = '23';
+[/SQLExecute]
+
+[!] SQLInfo [/!]
+
+[!] SQLRelease [/!]
+[SQLRelease result_ref=theResult]
+
+[!] SQLResult [/!]
+
+[!] Store [/!]
+
+[!] Switch | Case | Default [/!]
+[text]x=5[/text]
+[Switch value=[x]]
+  [Case value=1]
+    The value of x was 1
+  [/Case]
+  [Case value=2]
+    The value of x was 2
+  [/Case]
+  [Default]
+    The value of x was neither 1 nor 2; it was [x]
+  [/Default]
+[/Switch]
+
+[text]title=Mrs[/text]
+[Switch value=[title]]
+  [Case value=Mr]
+    You're a male
+  [/Case]
+  [Case value=Mrs]
+    You're a female
+  [/Case]
+[/Switch]
+
+[!] These Should Not Highlight As They Are Outside the Switch! [/!]
+[Case value=2]
+    The value of x was 2
+[/Case]
+[Default]
+    The value of x was neither 1 nor 2; it was [x]
+[/Default]
+
+[!] Table [/!]
+
+[!] TCPConnect [/!]
+
+[!] TCPSend [/!]
+
+[!] Text [/!]
+[Text Show=F]sentence1=This is a big long sentence, don't you think?[/Text]
+[Text scope=GLOBAL]name=John[/Text]
+[Text multi=T]sentence1=This is a Greater Sentence&sentence2=This one, not so much...[/Text]
+[Text]name[/Text]
+
+[!] ThisFile [/!]
+[ThisFile]
+
+[!] ThisURL [/!]
+[ThisURL]
+
+[!] ThisURLPlusGet [/!]
+[ThisURLPlusGet]
+
+[!] Time [/!]
+[TIME format=%H:%M:%S]
+
+[!] UnURL [/!]
+[UnURL]Filename%20with%20spaces.gif[/UnURL]
+
+[!] URL [/!]
+[URL]Any Text[/URL]
+
+[!] Uppercase [/!]
+
+[!] UserName [/!]
+[UserName]
+
+[!] ValidCard [/!]
+[ValidCard accountNum=cardNumber&card=VISA+MC]
+
+[!] Version [/!]
+[Version]
+
+[!] Wait [/!]
+
+[!] WaitForFile [/!]
+
+[!] WriteFile [/!]
+
+[!] XMLNode [/!]
+
+[!] XMLNodes [/!]
+
+[!] XMLNodesAttributes [/!]
+
+[!] XMLParse [/!]
+
+[!] XSL [/!]
+
+[!] XSLT [/!]
+
+
+[search db=addfields_test.db&neIDdata=[blank]&rank=off]
+[founditems]
+[ID] - [NAME] - [EMAIL] - [PHONE]
+
+[/founditems]
+[/search]
+
+[closedatabase db=addfields_test.db]
+
+[writefile file=addfields_test.db]ID,NAME
+"1","Scott"
+"2","Rusty"
+"3","David"
+"4","Daniel"
+"5","Dustin"
+[/writefile]
+
+[search db=addfields_test.db&neIDdata=[blank]&rank=off]
+[founditems]
+[ID] - [NAME]
+
+[/founditems]
+[/search]
+
+
+
+
+
+
+
