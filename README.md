@@ -1,4 +1,4 @@
-# WebDNA Language Extension README [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/educloud-ny/webdna-vscode)](https://github.com/educloud-ny/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.5-blue)](http://www.webdna.us/page.dna?numero=1)
+# WebDNA Language Extension [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/educloud-ny/webdna-vscode)](https://github.com/educloud-ny/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.5-blue)](http://www.webdna.us/page.dna?numero=1)
 
 This is a language extension for VSCode that will perform syntax highlighting on [WebDNA](http://www.webdna.us/) code. It is very much a work in progress and should be considered a 'beta' build as not everything is fully implemented or even tested!
 
@@ -8,8 +8,9 @@ This is a language extension for VSCode that will perform syntax highlighting on
 In addition to general syntax highlighting (described below) this extension provides additional functionality such as:
 1. Multi-File Support - Automatically recognizes htm, html, dna, tpl and inc files as potentially containing WebDNA and highlights accordingly.
 2. Comment Block Highlighting - Anything code between WebDNA comment tags will be not be processed or highlighted- instead everything will be highlighted with one color allowing for quick identification of commented out code.
-3. Basic Embeded Language Support - This extension will perform syntax highlighting for embeded languages automagically: IE HTML, SQL, CSS, JS, ect.
-4. Grammer Based Highlighting - Tags only available within a context will be highlighted only when used within that context, Only recognized parameters will be highlighted, ect. in order to help ensure better code and fewer bugs.
+3. Any tag that is not recognized will, by default, be seen as a variable.
+4. Basic Embeded Language Support - This extension will perform syntax highlighting for embeded languages automagically: IE HTML, SQL, CSS, JS, ect.
+5. Context Based Highlighting - Tags only available within a context will be highlighted only when used within that context, only recognized parameters will be highlighted, ect. in order to help ensure better code and fewer bugs.
 
 ### Syntax Highlighting
 Syntax Highlighting for WebDNA consists of a few components that each tag has: the tag name, potential tag parameters, and a potential tag context. 
@@ -50,6 +51,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | DDEConnect            | ✗        | ✗        | ✗        |
 | DDESend               | ✓        | N/A       | ✗        |
 | Decrypt               | ✗        | ✗        | N/A       |
+| Default               | ✓        | N/A       | ✗        |
 | Delete                | ✗        | ✗        | N/A       |
 | DeleteFile            | ✓        | ✓        | N/A       |
 | DeleteFolder          | ✓        | ✓        | N/A       |
@@ -159,6 +161,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Then                  | ✓        | N/A       | ✗        |
 | ThisFile              | ✓        | N/A       | N/A      |
 | ThisURL               | ✓        | N/A       | N/A      |
+| ThisURLPlusGet        | ✓        | N/A       | N/A      |
 | Time                  | ✓        | ✓        | N/A      |
 | UnURL                 | ✓        | N/A       | ✓        |
 | URL                   | ✓        | N/A       | ✓        |
