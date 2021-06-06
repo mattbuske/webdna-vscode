@@ -1,8 +1,9 @@
 # WebDNA Language Extension for VSCode Changelog
 
 ## (06/05/2021) v-0.0.7:
-    - Added support for the contexts: sqlinfo, sqlresult
-    - Added support for highlighting webdna tags only available in the sqlinfo and sqlresult contexts
+    - Added support for the contexts: sql, sqlinfo, sqlresult
+    - Added support for highlighting webdna tags only available in the sql, sqlinfo and sqlresult contexts
+    - Added support for highlighting sql code in the 'statement' parameter in the sql context
     - Added/updated support for the highlighting of:
         * Support tags: sqldisconnect, sqlrelease
         * Support parameters for tags: sqldisconnect, sqlrelease

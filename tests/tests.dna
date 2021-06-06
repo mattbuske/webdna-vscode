@@ -390,12 +390,18 @@
 [/Spawn]
 
 [!] SQL [/!]
-[SQL dsn=Pubs&statement=SELECT * from Authors;]
+[SQL dsn=Pubs&statement=[URL]SELECT * from Authors;[/URL]&password=[thepassword]&max=200]
     Found [NumFound] items<br>
     [FoundItems]
         [au_lname], [au_fname], [title]<br>
     [/FoundItems]
 [/SQL]
+
+[!] These Should Not Highlight As They Are Outside the Context! [/!]
+Found [NumFound] items<br>
+[FoundItems]
+    [au_lname], [au_fname], [title]<br>
+[/FoundItems]
 
 [!] SQLConnect [/!]
 [SQLConnect dbType=My[hello]SQL&host=192.168.1.1&database=SMSITest&uid=sa&pwd=pass&conn_var=conn1&var=conn1] 

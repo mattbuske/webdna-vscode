@@ -145,7 +145,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | ShowIf                | ✓        | ✓        | ✓        |
 | ShowNext              | ✗        | ✗        | ✗        |
 | Spawn                 | ✓        | N/A       | ✓        |
-| SQL                   | ✓        | ✗        | ✗        |
+| SQL                   | ✓        | ✓        | ✓        |
 | SQLConnect            | ✓        | ✓        | ✓        |
 | SQLDisconnect         | ✓        | ✓        | N/A      |
 | SQLExecute            | ✓        | ✓        | ✓        |
