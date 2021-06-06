@@ -42,6 +42,8 @@
 					"patterns": [
 					  { "include": "#parameter-interior" }
 					]
+				},{
+					"include": "#webdna"
 				}
 			]
 		},
@@ -351,6 +353,8 @@
 								{ "include": "#parameter-interior" }								
 							]
 						},{
+							"include": "#webdna"
+						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.convertchars.webdna",
 							"beginCaptures": {
@@ -437,6 +441,8 @@
 							"patterns": [
 								{ "include": "#parameter-interior" }								
 							]
+						},{
+							"include": "#webdna"
 						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.convertwords.webdna",
@@ -592,6 +598,8 @@
 							"patterns": [
 								{ "include": "#parameter-interior" }								
 							]
+						},{
+							"include": "#webdna"
 						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.countwords.webdna",
@@ -818,7 +826,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[\/)(return)(?=\\])",
+				"begin": "(?i)(\\[/)(return)(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -862,6 +870,8 @@
 					"patterns": [
 					  { "include": "#parameter-interior" }
 					]
+				},{
+					"include": "#webdna"
 				}]
 			}]
 		},
@@ -907,9 +917,11 @@
 					"patterns": [
 					  { "include": "#parameter-interior" }
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
-				"begin": "(?i)(\\[\/)\\b(function)\\b(?=\\])",
+				"begin": "(?i)(\\[/)\\b(function)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -956,6 +968,8 @@
 					"patterns": [
 					  { "include": "#parameter-interior" }
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(math)\\b(?=\\s|\\])",
@@ -1005,6 +1019,8 @@
 					"patterns": [
 					  { "include": "#webdna" }
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[\/)\\b(text|math)\\b(?=\\])",
@@ -1142,6 +1158,8 @@
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$2.webdna",
 					"patterns": [{ "include": "#parameter-interior" }]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(createfolder|deletefolder)\\b(?=\\s|\\])",
@@ -1177,6 +1195,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(copyfile|copyfolder|movefile|renamefile)\\b(?=\\s|\\])",
@@ -1212,6 +1232,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(closedatabase|commitdatabase)\\b(?=\\s|\\])",
@@ -1247,6 +1269,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(clearlineitems|purchase)\\b(?=\\s|\\])",
@@ -1282,6 +1306,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(date|random|time)\\b(?=\\s|\\])",
@@ -1317,6 +1343,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(getcookie|getmimeheader)\\b(?=\\s|\\])",
@@ -1352,6 +1380,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(setmimeheader)\\b(?=\\s|\\])",
@@ -1387,6 +1417,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(setcookie)\\b(?=\\s|\\])",
@@ -1422,6 +1454,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(removelineitem)\\b(?=\\s|\\])",
@@ -1457,6 +1491,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(protect)\\b(?=\\s|\\])",
@@ -1492,6 +1528,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(validcard)\\b(?=\\s|\\])",
@@ -1527,6 +1565,8 @@
 							"include": "#parameter-interior"
 						}
 					]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(findstring)\\b(?=\\s|\\])",
@@ -1558,6 +1598,8 @@
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$2.webdna",
 					"patterns": [{ "include": "#parameter-interior" }]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(?i)(\\[)\\b(filecompare)\\b(?=\\s|\\])",
@@ -1589,6 +1631,8 @@
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$2.webdna",
 					"patterns": [{ "include": "#parameter-interior" }]
+				},{
+					"include": "#webdna"
 				}]
 			}]
 		},
@@ -1680,6 +1724,8 @@
 							"patterns": [
 								{ "include": "#parameter-interior" }								
 							]
+						},{
+							"include": "#webdna"
 						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.sqlconnect.webdna",
@@ -1793,6 +1839,8 @@
 								{ "include": "#parameter-interior" }								
 							]
 						},{
+							"include": "#webdna"
+						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.sqlinfo.webdna",
 							"beginCaptures": {
@@ -1904,6 +1952,8 @@
 							"patterns": [
 								{ "include": "#parameter-interior" }								
 							]
+						},{
+							"include": "#webdna"
 						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.sqlresult.webdna",
@@ -2035,6 +2085,8 @@
 								{ "include": "#parameter-interior" }								
 							]
 						},{
+							"include": "#webdna"
+						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.sqlexecute.webdna",
 							"beginCaptures": {
@@ -2097,6 +2149,8 @@
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$2.webdna",
 					"patterns": [{ "include": "#parameter-interior" }]
+				},{
+					"include": "#webdna"
 				}]
 			},{
 				"begin": "(\\[)\\b(?i:(sqlrelease))\\b(?=\\s|\\])",
@@ -2128,6 +2182,8 @@
 					"end": "(?=\\s*+[^=\\s])",
 					"name": "meta.parameter.$2.webdna",
 					"patterns": [{ "include": "#parameter-interior" }]
+				},{
+					"include": "#webdna"
 				}]
 			}]
 		},
@@ -2219,6 +2275,8 @@
 									{ "include": "source.sql" }	
 								]
 							}]
+						},{
+							"include": "#webdna"
 						},{
 							"begin": "(\\])",
 							"name": "meta.embedded.context.sql.webdna",
@@ -2312,6 +2370,8 @@
 					"patterns": [
 						{
 							"include": "#parameters"
+						},{
+							"include": "#webdna"
 						}
 					]
 				},

@@ -1,6 +1,7 @@
 # WebDNA Language Extension for VSCode Changelog
 
 ## (06/05/2021) v-0.0.7:
+    - Fixed issue with some broken tag highlighting when a recognized parameter was not present
     - Added support for highlighting sql code in the 'statement' parameter in the sql context
     - Support for highlighting webdna tags only available in the sql, sqlinfo and sqlresult contexts
     - Added/updated support for the highlighting of:

@@ -314,6 +314,7 @@ else return "it's less that 50!"[/AppleScript]
 
 [!] Redirect [/!]
 [Redirect url=http://www.webdna.us/]
+[Redirect http://www.webdna.us/]
 
 [!] Referrer [/!]
 [Referrer]
