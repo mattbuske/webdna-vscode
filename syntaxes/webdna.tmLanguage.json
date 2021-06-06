@@ -1173,6 +1173,248 @@
 					}]
 				}]
 			},{
+				"comment": "WebDNA SQLInfo Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:sqlinfo)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:sqlinfo))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlinfo.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						}
+					},
+					"end": "(/)((?i:sqlinfo))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlinfo.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(&?)(?i:(conn_ref|ref))(?![\\w:-])",
+							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.sqlinfo.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlinfo.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:sqlinfo))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlinfo.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"begin": "\\G",
+								"end": "(?=\\[/(?i:sqlinfo))",
+								"patterns": [{
+									"comment": "WebDNA SQLInfo Internal Tags",
+									"begin": "(\\[)(?i:(sql_(host|server(type|ver)|clientver|dbname)))(?=\\])",
+									"beginCaptures": {
+										"1": {
+											"name": "punctuation.definition.tag.begin.webdna"
+										},
+										"2": {
+											"name": "variable.language.sqlinfo.webdna"
+										}
+									},
+									"name": "meta.variable.sqlinfo.$2.webdna",
+									"end": "\\]",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.tag.end.webdna"
+										}
+									}
+								},{
+									"include": "#webdna"
+								},
+								{ 
+									"include": "text.html.derivative" 
+								}]
+							}]
+						}]
+					}]
+				}]
+			},{
+				"comment": "WebDNA SQLResult Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:sqlresult)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:sqlresult))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlresult.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						}
+					},
+					"end": "(/)((?i:sqlresult))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.sqlresult.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "support.function.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(&?)(?i:(result_ref|ref))(?![\\w:-])",
+							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.sqlresult.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlresult.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:sqlresult))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.sqlresult.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"begin": "\\G",
+								"end": "(?=\\[/(?i:sqlresult))",
+								"patterns": [{
+									"comment": "WebDNA SQLResult Internal Tags",
+									"begin": "(\\[)(?i:(commandtext|num(found|fields|rowsaffected)|insertid))(?=\\])",
+									"beginCaptures": {
+										"1": {
+											"name": "punctuation.definition.tag.begin.webdna"
+										},
+										"2": {
+											"name": "variable.language.sqlresult.webdna"
+										}
+									},
+									"name": "meta.variable.sqlresult.$2.webdna",
+									"end": "\\]",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.tag.end.webdna"
+										}
+									}
+								},{
+									"comment": "WebDNA SQLResult Founditems",
+									"begin": "(\\[/?)(?i:(founditems))(?=\\])",
+									"beginCaptures": {
+										"1": {
+											"name": "punctuation.definition.tag.begin.webdna"
+										},
+										"2": {
+											"name": "keyword.control.loop.sqlresult.webdna"
+										}
+									},
+									"name": "meta.variable.sqlresult.$2.webdna",
+									"end": "\\]",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.tag.end.webdna"
+										}
+									}
+								},{
+									"include": "#webdna"
+								},
+								{ 
+									"include": "text.html.derivative" 
+								}]
+							}]
+						}]
+					}]
+				}]
+			},{
 				"comment": "WebDNA SQLExecute Context",
 				"begin": "(^[ \\t]+)?(?=\\[(?i:sqlexecute)\\b(?!-))",
 				"beginCaptures": {
@@ -1265,6 +1507,68 @@
 							}]
 						}]
 					}]
+				}]
+			},{
+				"begin": "(\\[)\\b(?i:(sqldisconnect))\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(?i:(conn_ref|ref))(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$2.webdna",
+					"patterns": [{ "include": "#parameter-interior" }]
+				}]
+			},{
+				"begin": "(\\[)\\b(?i:(sqlrelease))\\b(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "support.function.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "([\\s|&])(?i:(result_ref|ref))(?![\\w:-])",
+					"beginCaptures": {
+						"1": {
+							"name": "variable.parameter.and.webdna"
+						},
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$2.webdna",
+					"patterns": [{ "include": "#parameter-interior" }]
 				}]
 			}]
 		},

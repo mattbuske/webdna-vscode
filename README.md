@@ -147,11 +147,11 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Spawn                 | ✓        | N/A       | ✓        |
 | SQL                   | ✓        | ✗        | ✗        |
 | SQLConnect            | ✓        | ✓        | ✓        |
-| SQLDisconnect         | ✗        | ✗        | N/A      |
+| SQLDisconnect         | ✓        | ✓        | N/A      |
 | SQLExecute            | ✓        | ✓        | ✓        |
-| SQLInfo               | ✗        | ✗        | ✗        |
-| SQLRelease            | ✗        | ✗        | N/A      |
-| SQLResult             | ✗        | ✗        | ✗        |
+| SQLInfo               | ✓        | ✓        | ✓        |
+| SQLRelease            | ✓        | ✓        | N/A      |
+| SQLResult             | ✓        | ✓        | ✓        |
 | Store                 | ✗        | ✗        | ✗        |
 | Switch                | ✓        | ✓        | ✗        |
 | Table                 | ✗        | ✗        | ✗        |

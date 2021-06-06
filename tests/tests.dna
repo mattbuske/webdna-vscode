@@ -415,15 +415,43 @@
 
 [!] SQLExecute [/!]
 [SQLExecute conn_ref=con[jeeep]n1&result_var=rs1]
-select firstName,lastName from employees WHERE [hello] = '23';
+  SELECT firstName,lastName FROM employees WHERE [hello] = '23';
 [/SQLExecute]
 
 [!] SQLInfo [/!]
+[SQLInfo conn_ref=conn1&ref=conn1]
+    [SQL_HOST] - [SQL_SERVERTYPE] - [SQL_SERVERVER] - [SQL_CLIENTVER] - [SQL_DBNAME]
+    <table>
+        <tr><td>Host:</td><td>[SQL_HOST]</td></tr>
+        <tr><td>Server Version:</td><td>[SQL_SERVERVER]</td></tr>
+        <tr><td>Client Version:</td><td>[SQL_CLIENTVER]</td></tr>
+    </table>
+[/SQLInfo]
+
+[!] These Should Not Highlight As They Are Outside the Context! [/!]
+[SQL_HOST] - [SQL_SERVERTYPE] - [SQL_SERVERVER] - [SQL_CLIENTVER] - [SQL_DBNAME]
 
 [!] SQLRelease [/!]
 [SQLRelease result_ref=theResult]
 
 [!] SQLResult [/!]
+[SQLResult result_ref=rs1]
+    [numFound] records found<br>
+    <table border=1><tr><th>First Name</th><th>Last Name</th></tr>
+        [FoundItems]
+            <tr><td>[firstName]</td><td>[lastName]</td></tr>
+        [/FoundItems]
+    </table>
+     [CommandText] - [NumFields] - [NumRowsAffected] - [InsertID]
+[/SQLResult]
+
+[!] These Should Not Highlight As They Are Outside the Context! [/!]
+[numFound]
+[FoundItems]
+  <tr><td>[firstName]</td><td>[lastName]</td></tr>
+[/FoundItems]
+[CommandText] - [NumFields] - [NumRowsAffected] - [InsertID]
+
 
 [!] Store [/!]
 
