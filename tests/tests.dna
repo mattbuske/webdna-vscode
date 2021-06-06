@@ -15,17 +15,21 @@
 [!] AppendFile [/!]
 
 [!] AppleScript [/!]
+[AppleScript]if [random]>50 then return "it's more than 50!"
+else return "it's less that 50!"[/AppleScript]
 
 [!] ArrayGet [/!]
 
 [!] ArraySet [/!]
 
 [!] Authenticate [/!]
-[Authenticate]
+[Authenticate [realm]]
+[Authenticate Some Text]
 [Authenticate realm=Some Text]
 
 [!] BoldWords [/!]
 [BoldWords words=[wodescriptiondata]][description][/BoldWords]
+[BoldWords [wodescriptiondata]][description][/BoldWords]
 
 [!] BioType [/!]
 
@@ -37,7 +41,10 @@
 [CalcFileCRC32 path=somefolder/[StarShip]]
 
 [!] Capitalize [/!]
-[Capitalize]hello[/Capitalize]
+[Capitalize]Some Text that contains upper- and lower case letters[/Capitalize]
+[Capitalize]HI THERE[/Capitalize]
+[Capitalize]this is my 1st time at bat[/Capitalize]
+[Capitalize]a of on at the in or[/Capitalize]
 
 [!] Cart [/!]
 [Cart]
@@ -59,9 +66,10 @@
 
 [!] ConvertChars [/!]
 [ConvertChars]Some Text that contains © or other unusual letters[/ConvertChars]
+[convertchars table=t1&db=glossary.db]café[/convertchars]
 
 [!] ConvertWords [/!]
-[ConvertWords db=glossary.db]A HTTP request first uses DNS to look up the ip address[/ConvertWords]
+[ConvertWords db=glossary.db&table=theTable]A HTTP request first uses DNS to look up the ip address[/ConvertWords]
 
 [!] CopyFile [/!]
 [CopyFile from=fredFolder&to=[wilmaFolder]]
@@ -458,7 +466,6 @@ Found [NumFound] items<br>
 [/FoundItems]
 [CommandText] - [NumFields] - [NumRowsAffected] - [InsertID]
 
-
 [!] Store [/!]
 
 [!] Switch | Case | Default [/!]
@@ -524,6 +531,7 @@ Found [NumFound] items<br>
 [URL]Any Text[/URL]
 
 [!] Uppercase [/!]
+[Uppercase]Some Text containing upper- and lower case letters[/Uppercase]
 
 [!] UserName [/!]
 [UserName]
