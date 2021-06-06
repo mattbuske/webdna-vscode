@@ -1,4 +1,4 @@
-# WebDNA Language Extension [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) ![Release Version](https://img.shields.io/badge/release-alpha-orange) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/educloud-ny/webdna-vscode)](https://github.com/educloud-ny/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.5-blue)](http://www.webdna.us/page.dna?numero=1)
+# WebDNA Language Extension [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) ![Maintained](https://img.shields.io/badge/maintained-yes-green.svg) ![Release Version](https://img.shields.io/badge/project%20stage-alpha-orange) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/educloud-ny/webdna-vscode)](https://github.com/educloud-ny/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.5-blue)](http://www.webdna.us/page.dna?numero=1)
 
 This is a language extension for VSCode that will perform syntax highlighting on [WebDNA](http://www.webdna.us/) code. It is very much a work in progress and should be considered in 'alpha' as not everything is fully implemented or even tested!
 
@@ -38,7 +38,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Case                  | ✓        | ✓        | ✗         |
 | ClearLineItems        | ✓        | ✓        | N/A       |
 | CloseDatabase         | ✗        | ✗        | N/A       |
-| Command               | ✓        | ✗        | N/A       |
+| Command               | ✓        | N/A       | N/A       |
 | CommitDatabase        | ✗        | ✗        | N/A       |
 | ConvertChars          | ✓        | ✓        | ✓        |
 | ConvertWords          | ✓        | ✓        | ✓        |
