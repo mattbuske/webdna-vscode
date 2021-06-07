@@ -1,6 +1,6 @@
 # WebDNA Language Extension for VSCode Changelog
 
-## (06/06/2021) v-0.0.8:
+## (06/07/2021) v-0.0.8:
     - Removed test and dist folders from final vsix package
     - Added/updated support for the highlighting of:
         * Contexts: appendfile, ddeconnect, ddesend, decrypt, dos, encrypt, exclusivelock, fileinfo
