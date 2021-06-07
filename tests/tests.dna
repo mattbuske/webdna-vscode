@@ -5,6 +5,13 @@
     With WebDNA [thisurl] and [thisurlplusget]
 [/!]
 
+[!] Variable Tests [/!]
+Tela00001031 [test]
+Tela00001031[test]
+[Tela00001031[test]]
+[[test]]
+[[test]int[hello]!]
+
 [!] AddFields [/!]
 [AddFields db=addfields_test.db]EMAIL=us.here.com&PHONE=123-1235[/AddFields]
 
@@ -13,6 +20,10 @@
 [!] Append [/!]
 
 [!] AppendFile [/!]
+[AppendFile SomeTextFile]Hello, my name is Grant. The time is [time]
+This is a second line[/AppendFile]
+[AppendFile secure=F&file=SomeFile]Hello, my name is Grant. The time is [time]
+This is a second line[/AppendFile]
 
 [!] AppleScript [/!]
 [AppleScript]if [random]>50 then return "it's more than 50!"
@@ -94,14 +105,18 @@ else return "it's less that 50!"[/AppleScript]
 
 [!] DDEConnect | DDESend [/!]
 [DDEConnect program=PCAuthorize&topic=GetBatches]
-[DDESend]Tela00001031 1[/DDESend]
+  [DDESend]Tela00001031 [test][/DDESend]
 [/DDEConnect]
 
 [!] This Should Not Highlight As They Are Outside the Context! [/!]
-[DDESend]Tela00001031 1[/DDESend]
+[DDESend]Tela000[test]01031 1[/DDESend]
 
 [!] Decrypt [/!]
 [Decrypt seed=abcdefg];)(*&#$KLJFLKjkhegdlksdfg09814[/Decrypt]
+[decrypt method=twofishgcm&seed=secret_value&iv=89e12236ce056aa2&adata=89e12236ce056aa2]999fe9ff644e7e835c3d9d46cfedce88b2de6d1b5d114e29f161e6246d40380b639e73f006a073db567c6e7aa5740f9db45d81fd6a646cbd[/decrypt]
+[decrypt method=twofishgcm&seed=secret_value]89e12236ce056aa2999fe9ff644e7e835c3d9d46cfedce88b2de6d1b5d114e29f161e6246d40380b639e73f006a073db567c6e7aa5740f9db45d81fd6a646cbd[/decrypt]
+[decrypt method=aesgcm&seed=secret_value] 1a0ce107ed9ede09835b4c25336d8fd49699d21edd4fa365c545ed52b598b341df124b606934ca10f09bd31fbd3f03e993ca82c3f4d0eb[/decrypt]
+[decrypt method=aesgcm&seed=secret_value&iv=0123456789abcdef&adata=abcdefabcdef&tagsize=8]7888f14d14bf5d87df292ad7171d391b9da2d6d42da0247683e95d2774bac82e580bde64c9e56bd97e8783[/decrypt]
 
 [!] Delete [/!]
 [Delete db=DatabasePath&eqNAMEdata=Fred]
@@ -121,8 +136,15 @@ else return "it's less that 50!"[/AppleScript]
 [ElapsedTime]
 
 [!] Encrypt [/!]
+[Encrypt seed=abcdefg]Some Text that is private[/Encrypt]
+[encrypt method=twofishgcm&seed=secret_value]Twofish: passwords, credit card number, etc.[/encrypt]
+[encrypt method=aesgcm&seed=secret_value]passwords, credit card number, etc.[/encrypt]
+[encrypt method=aesgcm&seed=secret_value&iv=0123456789abcdef&adata=abcdefabcdef&tagsize=8]passwords, credit card number, etc.[/encrypt]
 
 [!] ExclusiveLock [/!]
+[ExclusiveLock db=orders.db&db=lineitems.db&db=accesslog.db]
+...search, delete, or modify any of orders.db, lineitems.db, or accesslog.db while being assured that no other threads can modify any of these databases until the closing /ExclusiveLock tag is reached.
+[/ExclusiveLock]
 
 [!] FileCompare [/!]
 [FileCompare method=SIZE&file1=../create_tutorial.tpl&file2=../header.inc]
@@ -131,6 +153,32 @@ else return "it's less that 50!"[/AppleScript]
 [FileCompare method=CRC32&file1crc=[crc_value]&file2=../header.inc]
 
 [!] FileInfo [/!]
+[FileInfo file=../Pictures/1234.gif]
+[IsFolder]
+[IsFile]
+[Exists]
+[FileName]
+[FullPath]
+[ModDate]
+[ModTime]
+[Size]
+[StartPath]
+[ImageWidth]
+[ImageHeight]
+[/FileInfo]
+
+[!] This Should Not Highlight As They Are Outside the Context! [/!]
+[IsFolder]
+[IsFile]
+[Exists]
+[FileName]
+[FullPath]
+[ModDate]
+[ModTime]
+[Size]
+[StartPath]
+[ImageWidth]
+[ImageHeight]
 
 [!] FindString [/!]
 [FindString source=[mystring]&find=powerful]
@@ -432,6 +480,7 @@ Found [NumFound] items<br>
 [SQLExecute conn_ref=con[jeeep]n1&result_var=rs1]
   SELECT firstName,lastName FROM employees WHERE [hello] = '23';
 [/SQLExecute]
+SELECT firstName,lastName FROM employees WHERE [hello] = '23';
 
 [!] SQLInfo [/!]
 [SQLInfo conn_ref=conn1&ref=conn1]
