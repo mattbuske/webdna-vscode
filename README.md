@@ -66,7 +66,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | FlushCache            | ✓        | N/A       | N/A      |
 | FlushDatabases        | ✓        | N/A       | N/A      |
 | Format                | ✗        | ✗        | ✗        |
-| FormVariables         | ✗        | ✗        | ✗        |
+| FormVariables         | ✓        | ✓        | ✓        |
 | FoundItems            | ✗        | ✗        | ✗        |
 | FreeMemory            | ✓        | N/A       | N/A      |
 | Function              | ✓        | ✓        | ✗        |

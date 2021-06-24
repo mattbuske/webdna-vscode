@@ -1,5 +1,10 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (06/24/2021) v-0.1.0:
+    - Changed versioning to follow standard semantic versioning.
+    - Added/updated support for the highlighting of:
+        * Keyword Contexts: formvariables
+
 ## (06/07/2021) v-0.0.8:
     - Removed test and dist folders from final vsix package
     - Added/updated support for the highlighting of:

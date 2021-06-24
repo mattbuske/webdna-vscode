@@ -1522,6 +1522,119 @@
 		},
 		"keywords-flow-valid": {
 			"patterns": [{
+				"comment": "WebDNA FormVariables Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:formvariables)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:formvariables))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.formvariables.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.flow.webdna"
+						}
+					},
+					"end": "(/)((?i:formvariables))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.formvariables.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.flow.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\s|&)(?i:(name|exact|form))(?![\\w:-])",
+							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"include": "#webdna"
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.formvariables.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.formvariables.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:formvariables))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.formvariables.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"begin": "\\G",
+								"end": "(?=\\[/(?i:formvariables))",
+								"patterns": [{
+									"comment": "WebDNA FormVariables Internal Tags Context",
+									"begin": "(\\[)(?i:(name|value|index))(?=\\])",
+									"beginCaptures": {
+										"1": {
+											"name": "punctuation.definition.tag.begin.webdna"
+										},
+										"2": {
+											"name": "variable.language.formvariables.webdna"
+										}
+									},
+									"name": "meta.variable.formvariables.$2.webdna",
+									"end": "\\]",
+									"endCaptures": {
+										"0": {
+											"name": "punctuation.definition.tag.end.webdna"
+										}
+									}
+								},{
+									"include": "#webdna"
+								},{ 
+									"include": "text.html.derivative" 
+								}]
+							}]
+						}]
+					}]
+				}]
+			},{
 				"begin": "(?i)(\\[)(return)(?=\\])",
 				"beginCaptures": {
 					"1": {

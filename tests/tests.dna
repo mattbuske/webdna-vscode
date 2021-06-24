@@ -193,6 +193,17 @@ else return "it's less that 50!"[/AppleScript]
 [!] Format [/!]
 
 [!] FormVariables [/!]
+[FormVariables]
+[index],[name],[value]
+[/FormVariables]
+
+[FormVariables name=text&exact=T&form=include]
+[index],[name],[value]
+[/FormVariables]
+
+[!] This Should Not Highlight As They Are Outside the Context! [/!]
+[index],[name],[value]
+
 
 [!] FoundItems [/!]
 
