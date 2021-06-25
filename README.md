@@ -92,8 +92,8 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | LineItems             | ✓        | N/A       | ✓        |
 | ListChars             | ✓        | ✓        | ✓        |
 | ListCookies           | ✓        | ✓        | ✓        |
-| ListDatabases         | ✓        | N/A       | ✗        |
-| ListFields            | ✗        | ✗        | ✗        |
+| ListDatabases         | ✓        | N/A       | ✓        |
+| ListFields            | ✓        | ✓        | ✓        |
 | ListFiles             | ✗        | ✗        | ✗        |
 | ListMIMEHeaders       | ✗        | ✗        | ✗        |
 | ListPath              | ✗        | ✗        | ✗        |

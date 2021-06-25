@@ -1339,7 +1339,7 @@
 					}]
 				}]
 			},{
-				"begin": "(?i)(\\[)\\b(input|interpret|listdatabases|raw|shell|spawn|unurl|url)\\b(?=\\])",
+				"begin": "(?i)(\\[)\\b(input|interpret|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -1355,7 +1355,7 @@
 					}
 				}
 			},{
-				"begin": "(?i)(\\[\/)\\b(input|interpret|listdatabases|raw|shell|spawn|unurl|url)\\b(?=\\])",
+				"begin": "(?i)(\\[\/)\\b(input|interpret|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"
@@ -2012,6 +2012,203 @@
 									}
 								},
 								"name": "meta.variable.listcookies.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"include": "#webdna"
+							},{ 
+								"include": "text.html.derivative" 
+							}]
+						}]
+					}]
+				}]
+			},{
+				"comment": "WebDNA ListDatabases Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:listdatabases)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:listdatabases))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listdatabases.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						}
+					},
+					"end": "(/)((?i:listdatabases))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listdatabases.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.listdatabases.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listdatabases.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:listdatabases))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listdatabases.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"comment": "WebDNA ListDatabases Internal Tags Context",
+								"begin": "(\\[)(?i:(n(ame|um(records|fields))|index))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "variable.language.listdatabases.webdna"
+									}
+								},
+								"name": "meta.variable.listdatabases.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"include": "#webdna"
+							},{ 
+								"include": "text.html.derivative" 
+							}]
+						}]
+					}]
+				}]
+			},{
+				"comment": "WebDNA ListFields Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:listfields)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:listfields))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listfields.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						}
+					},
+					"end": "(/)((?i:listfields))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listfields.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\s|&)(?i:(db|conn_ref|table))(?![\\w:-])",
+							"beginCaptures": {
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"include": "#webdna"
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.listfields.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listfields.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:listfields))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listfields.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"comment": "WebDNA ListFields Internal Tags Context",
+								"begin": "(\\[)(?i:(fieldname|index|ordinal|datatype|allownull|width))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "variable.language.listfields.webdna"
+									}
+								},
+								"name": "meta.variable.listfields.$2.webdna",
 								"end": "\\]",
 								"endCaptures": {
 									"0": {

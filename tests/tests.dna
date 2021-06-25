@@ -492,7 +492,7 @@ Character at string position [position] = '[char]'
 [!] ========== [/!]
 [!] ListFields [/!]
 [!] ========== [/!]
-[ListFields conn_ref=conn1&table=inventory]
+[ListFields conn_ref=conn1&table=inventory&db=This]
 [fieldname] [index]
 ordinal: [ordinal]
 datatype: [datatype]
