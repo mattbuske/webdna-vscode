@@ -90,7 +90,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | LastAutonumber        | ✗        | N/A       | N/A      |
 | LastRandom            | ✓        | N/A       | N/A      |
 | LineItems             | ✓        | N/A       | ✓        |
-| ListChars             | ✗        | ✗        | ✗        |
+| ListChars             | ✓        | ✓        | ✓        |
 | ListCookies           | ✗        | ✗        | ✗        |
 | ListDatabases         | ✓        | N/A       | ✗        |
 | ListFields            | ✗        | ✗        | ✗        |

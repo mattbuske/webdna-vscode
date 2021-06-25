@@ -1339,115 +1339,6 @@
 					}]
 				}]
 			},{
-				"comment": "WebDNA LineItems Context",
-				"begin": "(^[ \\t]+)?(?=\\[(?i:lineitems)\\b(?!-))",
-				"beginCaptures": {
-					"1": {
-						"name": "punctuation.whitespace.embedded.leading.webdna"
-					}
-				},
-				"end": "(?!\\G)([ \\t]*$\\n?)?",
-				"endCaptures": {
-					"1": {
-						"name": "punctuation.whitespace.embedded.trailing.webdna"
-					}
-				},
-				"patterns": [{
-					"begin": "(\\[)((?i:lineitems))\\b",
-					"beginCaptures": {
-						"0": {
-							"name": "meta.tag.metadata.lineitems.start.webdna"
-						},
-						"1": {
-							"name": "punctuation.definition.tag.begin.webdna"
-						},
-						"2": {
-							"name": "keyword.control.flow.webdna"
-						}
-					},
-					"end": "(/)((?i:lineitems))(\\])",
-					"endCaptures": {
-						"0": {
-							"name": "meta.tag.metadata.lineitems.end.webdna"
-						},
-						"1": {
-							"name": "punctuation.definition.tag.begin.webdna"
-						},
-						"2": {
-							"name": "keyword.control.flow.webdna"
-						},
-						"3": {
-							"name": "punctuation.definition.tag.end.webdna"
-						}
-					},
-					"patterns": [{
-						"begin": "\\G",
-						"end": "(?=/)",
-						"patterns": [{
-							"begin": "(\\])",
-							"name": "meta.embedded.context.lineitems.webdna",
-							"beginCaptures": {
-								"0": {
-									"name": "meta.tag.metadata.lineitems.start.webdna"
-								},
-								"1": {
-									"name": "punctuation.definition.tag.end.webdna"
-								}
-							},
-							"end": "((\\[))(?=/(?i:lineitems))",
-							"endCaptures": {
-								"0": {
-									"name": "meta.tag.metadata.lineitems.end.webdna"
-								},
-								"1": {
-									"name": "punctuation.definition.tag.begin.webdna"
-								}
-							},
-							"patterns": [{
-								"comment": "WebDNA LineItems Internal Tags Context",
-								"begin": "(\\[)(?i:(lineindex|sku|quantity|price|t(axable|ext(a|b|c|d|e))|canemail|unitshipcost))(?=\\])",
-								"beginCaptures": {
-									"1": {
-										"name": "punctuation.definition.tag.begin.webdna"
-									},
-									"2": {
-										"name": "variable.language.lineitems.webdna"
-									}
-								},
-								"name": "meta.variable.lineitems.$2.webdna",
-								"end": "\\]",
-								"endCaptures": {
-									"0": {
-										"name": "punctuation.definition.tag.end.webdna"
-									}
-								}
-							},{
-								"comment": "WebDNA LineItems Internal Tags Context (Depreciated)",
-								"begin": "(\\[)(?i:(quantityprice))(?=\\])",
-								"beginCaptures": {
-									"1": {
-										"name": "punctuation.definition.tag.begin.webdna"
-									},
-									"2": {
-										"name": "invalid.depreciated.lineitems.webdna"
-									}
-								},
-								"name": "meta.variable.lineitems.$2.webdna",
-								"end": "\\]",
-								"endCaptures": {
-									"0": {
-										"name": "punctuation.definition.tag.end.webdna"
-									}
-								}
-							},{
-								"include": "#webdna"
-							},{ 
-								"include": "text.html.derivative" 
-							}]
-						}]
-					}]
-				}]
-			},{
 				"begin": "(?i)(\\[)\\b(input|interpret|listdatabases|raw|shell|spawn|unurl|url)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
@@ -1585,7 +1476,8 @@
 		"keywords-depreciated": {
 			"patterns": [
 				{ "include": "#keywords-conditional-depreciated" },
-				{ "include": "#keywords-flow-depreciated" }
+				{ "include": "#keywords-flow-depreciated" },
+				{ "include": "#keywords-loop-depreciated" }
 			]
 		},
 		"keywords-flow": {
@@ -1809,10 +1701,232 @@
 				}]
 			}]
 		},
+		"keywords-loop-depreciated": {
+			"patterns": []
+		},
+		"keywords-loop-valid": {
+			"patterns": [{
+				"comment": "WebDNA LineItems Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:lineitems)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:lineitems))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.lineitems.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						}
+					},
+					"end": "(/)((?i:lineitems))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.lineitems.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.lineitems.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.lineitems.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:lineitems))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.lineitems.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"comment": "WebDNA LineItems Internal Tags Context",
+								"begin": "(\\[)(?i:(lineindex|sku|quantity|price|t(axable|ext(a|b|c|d|e))|canemail|unitshipcost))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "variable.language.lineitems.webdna"
+									}
+								},
+								"name": "meta.variable.lineitems.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"comment": "WebDNA LineItems Internal Tags Context (Depreciated)",
+								"begin": "(\\[)(?i:(quantityprice))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "invalid.depreciated.lineitems.webdna"
+									}
+								},
+								"name": "meta.variable.lineitems.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"include": "#webdna"
+							},{ 
+								"include": "text.html.derivative" 
+							}]
+						}]
+					}]
+				}]
+			},{
+				"comment": "WebDNA ListChars Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:listchars)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:listchars))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listchars.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						}
+					},
+					"end": "(/)((?i:listchars))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listchars.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\s|&)(?i:(chars|from|start|end))(?![\\w:-])",
+							"beginCaptures": {
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"include": "#webdna"
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.listchars.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listchars.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:listchars))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listchars.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"comment": "WebDNA ListChars Internal Tags Context",
+								"begin": "(\\[)(?i:(index|char|position))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "variable.language.listchars.webdna"
+									}
+								},
+								"name": "meta.variable.listchars.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"include": "#webdna"
+							},{ 
+								"include": "text.html.derivative" 
+							}]
+						}]
+					}]
+				}]
+			}]
+		},
 		"keywords-valid": {
 			"patterns": [
 				{ "include": "#keywords-conditional-valid" },
-				{ "include": "#keywords-flow-valid" }
+				{ "include": "#keywords-flow-valid" },
+				{ "include": "#keywords-loop-valid" }
 			]
 		},
 
