@@ -1862,6 +1862,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(chars|from|start|end))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -1968,6 +1971,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(name|exact))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2165,6 +2171,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(db|conn_ref|table))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2271,6 +2280,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(path|name|showinvisibles|exact))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2377,6 +2389,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(name|exact))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2483,6 +2498,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(path|(file|path)only))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2589,6 +2607,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(name|exact|type))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
@@ -2695,6 +2716,9 @@
 						"patterns": [{
 							"begin": "(\\s|&)(?i:(words|delimiters|tabs))(?![\\w:-])",
 							"beginCaptures": {
+								"1": {
+									"name": "variable.parameter.and.webdna"
+								},
 								"2": {
 									"name": "variable.parameter.webdna"
 								}
