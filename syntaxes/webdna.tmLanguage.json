@@ -2435,6 +2435,112 @@
 						}]
 					}]
 				}]
+			},{
+				"comment": "WebDNA ListPath Context",
+				"begin": "(^[ \\t]+)?(?=\\[(?i:listpath)\\b(?!-))",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.leading.webdna"
+					}
+				},
+				"end": "(?!\\G)([ \\t]*$\\n?)?",
+				"endCaptures": {
+					"1": {
+						"name": "punctuation.whitespace.embedded.trailing.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(\\[)((?i:listpath))\\b",
+					"beginCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listpath.start.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						}
+					},
+					"end": "(/)((?i:listpath))(\\])",
+					"endCaptures": {
+						"0": {
+							"name": "meta.tag.metadata.listpath.end.webdna"
+						},
+						"1": {
+							"name": "punctuation.definition.tag.begin.webdna"
+						},
+						"2": {
+							"name": "keyword.control.loop.webdna"
+						},
+						"3": {
+							"name": "punctuation.definition.tag.end.webdna"
+						}
+					},
+					"patterns": [{
+						"begin": "\\G",
+						"end": "(?=/)",
+						"patterns": [{
+							"begin": "(\\s|&)(?i:(path|(file|path)only))(?![\\w:-])",
+							"beginCaptures": {
+								"2": {
+									"name": "variable.parameter.webdna"
+								}
+							},
+							"comment": "WebDNA parameters",
+							"end": "(?=\\s*+[^=\\s])",
+							"name": "meta.parameter.$2.webdna",
+							"patterns": [
+								{ "include": "#parameter-interior" }								
+							]
+						},{
+							"include": "#webdna"
+						},{
+							"begin": "(\\])",
+							"name": "meta.embedded.context.listpath.webdna",
+							"beginCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listpath.start.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.end.webdna"
+								}
+							},
+							"end": "((\\[))(?=/(?i:listpath))",
+							"endCaptures": {
+								"0": {
+									"name": "meta.tag.metadata.listpath.end.webdna"
+								},
+								"1": {
+									"name": "punctuation.definition.tag.begin.webdna"
+								}
+							},
+							"patterns": [{
+								"comment": "WebDNA ListPath Internal Tags Context",
+								"begin": "(\\[)(?i:(index|filename|name))(?=\\])",
+								"beginCaptures": {
+									"1": {
+										"name": "punctuation.definition.tag.begin.webdna"
+									},
+									"2": {
+										"name": "variable.language.listpath.webdna"
+									}
+								},
+								"name": "meta.variable.listpath.$2.webdna",
+								"end": "\\]",
+								"endCaptures": {
+									"0": {
+										"name": "punctuation.definition.tag.end.webdna"
+									}
+								}
+							},{
+								"include": "#webdna"
+							},{ 
+								"include": "text.html.derivative" 
+							}]
+						}]
+					}]
+				}]
 			}]
 		},
 		"keywords-valid": {
