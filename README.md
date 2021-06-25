@@ -98,7 +98,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | ListMIMEHeaders       | ✓        | ✓        | ✓        |
 | ListPath              | ✓        | ✓        | ✓        |
 | ListVariables         | ✓        | ✓        | ✓        |
-| ListWords             | ✗        | ✗        | ✗        |
+| ListWords             | ✓        | ✓        | ✓        |
 | Lookup                | ✓        | ✗        | N/A       |
 | Loop                  | ✗        | ✗        | ✗        |
 | LowerCase             | ✗        | ✗        | ✗        |
