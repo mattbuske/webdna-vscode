@@ -1,5 +1,8 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (01/15/2022) v-0.1.1:
+- Updated License and publisher information
+
 ## (06/24/2021) v-0.1.0:
 - Changed versioning to follow standard semantic versioning.
 - Added/updated support for the highlighting of:

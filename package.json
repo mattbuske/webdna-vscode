@@ -2,9 +2,9 @@
     "name": "webdna",
     "displayName": "WebDNA",
     "description": "WebDNA File",
-    "version": "0.1.0",
-    "publisher": "EduCloud",
-    "repository": "https://github.com/educloud-ny/webdna-vscode",
+    "version": "0.1.1",
+    "publisher": "Deepworks",
+    "repository": "https://github.com/deepworks-net/webdna-vscode",
     "engines": {
         "vscode": "^1.49.0"
     },
