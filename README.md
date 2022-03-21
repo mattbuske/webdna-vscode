@@ -111,7 +111,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | OrderFile             | ✗        | ✗        | ✗        |
 | Object                | ✗        | ✗        | ✗        |
 | Password              | ✓        | N/A       | N/A      |
-| PermRedirect          | X        | N/A       | N/A      |
+| PermRedirect          | ✓        | N/A       | N/A      |
 | Platform              | ✓        | N/A       | N/A      |
 | Product               | ✓        | N/A       | N/A      |
 | Protect               | ✓        | ✓        | N/A      |
@@ -119,7 +119,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Random                | ✓        | ✓        | N/A      |
 | Raw                   | ✓        | N/A       | ✗       |
 | RawPost               | X        | N/A       | ✗       |
-| RealIP                | ✗        | N/A       | N/A       |
+| RealIP                | ✓        | N/A       | N/A       |
 | Redirect              | ✓        | ✓        | N/A      |
 | Referrer              | ✓        | N/A       | N/A      |
 | Referer               | ✓        | N/A       | N/A      |
@@ -166,8 +166,8 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Text                  | ✓        | ✓        | ✗        |
 | Then                  | ✓        | N/A       | ✗        |
 | ThisFile              | ✓        | N/A       | N/A      |
-| ThisHost              | ✗        | N/A       | N/A      |
-| ThisPort              | ✗        | N/A       | N/A      |
+| ThisHost              | ✓        | N/A       | N/A      |
+| ThisPort              | ✓        | N/A       | N/A      |
 | ThisURL               | ✓        | N/A       | N/A      |
 | ThisURLPlusGet        | ✓        | N/A       | N/A      |
 | Time                  | ✓        | ✓        | N/A      |
@@ -179,7 +179,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Version               | ✓        | N/A       | N/A      |
 | Wait                  | ✗        | ✗        | N/A      |
 | WaitForFile           | ✗        | ✗        | ✗        |
-| WebServer             | ✗        | N/A       | N/A      |
+| WebServer             | ✓        | N/A       | N/A      |
 | WriteFile             | ✗        | ✗        | ✗        |
 | XMLNode               | ✗        | ✗        | ✗        |
 | XMLNodes              | ✗        | ✗        | ✗        |
