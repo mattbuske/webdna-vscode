@@ -148,6 +148,10 @@ else return "it's less that 50!"[/AppleScript]
 [!] ========== [/!]
 [CountWords Delimiters= ,]This is a big long sentence, don't you think?[/CountWords]
 
+[!] ======== [/!]
+[!] CreateDB [/!]
+[!] ======== [/!]
+
 [!] ============ [/!]
 [!] CreateFolder [/!]
 [!] ============ [/!]
@@ -158,6 +162,10 @@ else return "it's less that 50!"[/AppleScript]
 [!] Date [/!]
 [!] ==== [/!]
 [Date format=%m/%d/%Y]
+
+[!] ========= [/!]
+[!] DBEncrypt [/!]
+[!] ========= [/!]
 
 [!] ==================== [/!]
 [!] DDEConnect | DDESend [/!]
@@ -407,6 +415,10 @@ else return "it's less that 50!"[/AppleScript]
 [!] JSONStore [/!]
 [!] ========= [/!]
 
+[!] ========== [/!]
+[!] JSONStore2 [/!]
+[!] ========== [/!]
+
 [!] ============== [/!]
 [!] LastAutonumber [/!]
 [!] ============== [/!]
@@ -648,6 +660,12 @@ Record [index] added [break]
 [!] ======== [/!]
 [Password]
 
+[!] ============ [/!]
+[!] PermRedirect [/!]
+[!] ============ [/!]
+[PermRedirect url=http://www.webdna.us/]
+[PermRedirect http://www.webdna.us/]
+
 [!] ======== [/!]
 [!] Platform [/!]
 [!] ======== [/!]
@@ -680,6 +698,15 @@ Record [index] added [break]
 [!] Raw [/!]
 [!] === [/!]
 [Raw] Any text, including any [xxx] tags such as [date] or [delete] [/Raw]
+
+[!] ======= [/!]
+[!] RawPost [/!]
+[!] ======= [/!]
+
+[!] ====== [/!]
+[!] RealIP [/!]
+[!] ====== [/!]
+[RealIP]
 
 [!] ======== [/!]
 [!] Redirect [/!]
@@ -974,6 +1001,16 @@ SELECT firstName,lastName FROM employees WHERE [hello] = '23';
 [!] ======== [/!]
 [ThisFile]
 
+[!] ======== [/!]
+[!] ThisHost [/!]
+[!] ======-= [/!]
+[ThisHost]
+
+[!] ======== [/!]
+[!] ThisPort [/!]
+[!] ======== [/!]
+[ThisPort]
+
 [!] ======= [/!]
 [!] ThisURL [/!]
 [!] ======= [/!]
@@ -1027,6 +1064,11 @@ SELECT firstName,lastName FROM employees WHERE [hello] = '23';
 [!] =========== [/!]
 [!] WaitForFile [/!]
 [!] =========== [/!]
+
+[!] ========= [/!]
+[!] WebServer [/!]
+[!] ========= [/!]
+[WebServer]
 
 [!] ========= [/!]
 [!] WriteFile [/!]

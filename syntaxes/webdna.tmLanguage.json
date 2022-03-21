@@ -1699,6 +1699,38 @@
 				},{
 					"include": "#webdna"
 				}]
+			},{
+				"begin": "(?i)(\\[)(permredirect)(?=\\s|\\])",
+				"beginCaptures": {
+					"1": {
+						"name": "punctuation.definition.tag.begin.webdna"
+					},
+					"2": {
+						"name": "keyword.control.flow.webdna"
+					}
+				},
+				"end": "\\]",
+				"endCaptures": {
+					"0": {
+						"name": "punctuation.definition.tag.end.webdna"
+					}
+				},
+				"patterns": [{
+					"begin": "(?i)([\\s])(url)(?![\\w:-])",
+					"beginCaptures": {
+						"2": {
+							"name": "variable.parameter.webdna"
+						}
+					},
+					"comment": "WebDNA parameters",
+					"end": "(?=\\s*+[^=\\s])",
+					"name": "meta.parameter.$2.webdna",
+					"patterns": [
+					  { "include": "#parameter-interior" }
+					]
+				},{
+					"include": "#webdna"
+				}]
 			}]
 		},
 		"keywords-loop-depreciated": {
@@ -2983,7 +3015,7 @@
 		},
 		"support-function-valid": {
 			"patterns": [{
-				"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|referrer|referer|thisfile|thisurl|thisurlplusget|username|version)\\b(?=\\])",
+				"begin": "(?i)(\\[)\\b(browsername|cart|command|elapsedtime|flushdatabases|flushcache|freememory|httpmethod|ipaddress|issecureclient|lastautonumber|lastrandom|password|platform|product|realip|referrer|referer|thisfile|thisport|thishost|thisurl|thisurlplusget|username|version|webserver)\\b(?=\\])",
 				"beginCaptures": {
 					"1": {
 						"name": "punctuation.definition.tag.begin.webdna"

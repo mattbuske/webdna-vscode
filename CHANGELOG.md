@@ -1,5 +1,11 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (03/20/2022) v-0.1.2:
+- Updated Readme Information
+- Added/updated support for the highlighting of:
+    * Support tags: realip, thishost, thisport, webserver
+    * keyword tags: permredirect
+
 ## (01/15/2022) v-0.1.1:
 - Updated License and publisher information
 

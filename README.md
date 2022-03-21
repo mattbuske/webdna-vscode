@@ -1,4 +1,4 @@
-# WebDNA Language Extension [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg) ![Release Version](https://img.shields.io/badge/project%20stage-alpha-orange) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/deepworks-net/webdna-vscode)](https://github.com/deepworks-net/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.5-blue)](http://www.webdna.us/page.dna?numero=1)
+# WebDNA Language Extension [![made-for-VSCode](https://img.shields.io/badge/Made%20for-VSCode-1f425f.svg)](https://code.visualstudio.com/) ![Maintained](https://img.shields.io/badge/maintained-yes-brightgreen.svg) ![Release Version](https://img.shields.io/badge/project%20stage-alpha-orange) [![GitHub tag (latest SemVer)](https://img.shields.io/github/v/tag/deepworks-net/webdna-vscode)](https://github.com/deepworks-net/webdna-vscode/releases) [![WebDNA Version Support](https://img.shields.io/badge/webdna-%5E8.6-blue)](http://www.webdna.us/page.dna?numero=1)
 
 This is a language extension for VSCode that will perform syntax highlighting on [WebDNA](http://www.webdna.us/) code. It is very much a work in progress and should be considered in 'alpha' as not everything is fully implemented or even tested!
 
@@ -46,8 +46,10 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | CopyFolder            | ✓        | ✓        | N/A       |
 | CountChars            | ✓        | N/A       | ✓        |
 | CountWords            | ✓        | ✓        | ✓        |
+| CreateDB              | ✗        | ✗        | N/A       |
 | CreateFolder          | ✓        | ✓        | N/A       |
 | Date                  | ✓        | ✓        | N/A       |
+| DBEncrypt             | ✗        | ✗        | N/A       |
 | DDEConnect            | ✓        | ✓        | ✓        |
 | DDESend               | ✓        | N/A       | ✓        |
 | Decrypt               | ✓        | ✓        | ✓        |
@@ -87,7 +89,8 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | IPAddress             | ✓        | N/A       | N/A      |
 | IsSecureClient        | ✓        | N/A       | N/A      |
 | JSONStore             | ✗        | ✗        | ✗        |
-| LastAutonumber        | ✓        | N/A       | N/A      |
+| JSONStore2            | ✗        | ✗        | ✗        |
+| LastAutoNumber        | ✓        | N/A       | N/A      |
 | LastRandom            | ✓        | N/A       | N/A      |
 | LineItems             | ✓        | N/A       | ✓        |
 | ListChars             | ✓        | ✓        | ✓        |
@@ -108,12 +111,15 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | OrderFile             | ✗        | ✗        | ✗        |
 | Object                | ✗        | ✗        | ✗        |
 | Password              | ✓        | N/A       | N/A      |
+| PermRedirect          | X        | N/A       | N/A      |
 | Platform              | ✓        | N/A       | N/A      |
 | Product               | ✓        | N/A       | N/A      |
 | Protect               | ✓        | ✓        | N/A      |
 | Purchase              | ✓        | ✓        | N/A      |
 | Random                | ✓        | ✓        | N/A      |
 | Raw                   | ✓        | N/A       | ✗       |
+| RawPost               | X        | N/A       | ✗       |
+| RealIP                | ✗        | N/A       | N/A       |
 | Redirect              | ✓        | ✓        | N/A      |
 | Referrer              | ✓        | N/A       | N/A      |
 | Referer               | ✓        | N/A       | N/A      |
@@ -160,6 +166,8 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Text                  | ✓        | ✓        | ✗        |
 | Then                  | ✓        | N/A       | ✗        |
 | ThisFile              | ✓        | N/A       | N/A      |
+| ThisHost              | ✗        | N/A       | N/A      |
+| ThisPort              | ✗        | N/A       | N/A      |
 | ThisURL               | ✓        | N/A       | N/A      |
 | ThisURLPlusGet        | ✓        | N/A       | N/A      |
 | Time                  | ✓        | ✓        | N/A      |
@@ -171,6 +179,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Version               | ✓        | N/A       | N/A      |
 | Wait                  | ✗        | ✗        | N/A      |
 | WaitForFile           | ✗        | ✗        | ✗        |
+| WebServer             | ✗        | N/A       | N/A      |
 | WriteFile             | ✗        | ✗        | ✗        |
 | XMLNode               | ✗        | ✗        | ✗        |
 | XMLNodes              | ✗        | ✗        | ✗        |
