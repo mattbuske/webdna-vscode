@@ -124,7 +124,7 @@ Syntax Highlighting for WebDNA consists of a few components that each tag has: t
 | Referrer              | ✓        | N/A       | N/A      |
 | Referer               | ✓        | N/A       | N/A      |
 | Regex                 | ✗        | ✗        | ✗        |
-| RemoveHTML            | ✗        | ✗        | ✗        |
+| RemoveHTML            | ✓        | ✓        | ✓        |
 | RemoveLineItem        | ✓        | ✓        | N/A      |
 | Replace               | ✗        | ✗        | ✗        |
 | ReplaceFoundItems     | ✗        | N/A       | ✗        |

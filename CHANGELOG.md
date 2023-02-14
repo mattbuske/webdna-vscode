@@ -1,5 +1,9 @@
 # WebDNA Language Extension for VSCode Changelog
 
+## (02/13/2023) v-0.2.0:
+- Added/updated support for the highlighting of:
+    * Contexts: removehtml
+
 ## (03/20/2022) v-0.1.2:
 - Updated Readme Information
 - Added/updated support for the highlighting of:

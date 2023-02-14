@@ -731,6 +731,13 @@ Record [index] added [break]
 [!] ========== [/!]
 [!] RemoveHTML [/!]
 [!] ========== [/!]
+[removehtml]Any Text[/removehtml]
+[removehtml]
+Some Text that contains <br> <h3>or</h3> other HTML
+[/removehtml]
+[removehtml source=T&replaceWith=HTML]
+Some Text that [thisVariable] contains <br> <h3>or</h3> other HTML
+[/removehtml]
 
 [!] ============== [/!]
 [!] RemoveLineItem [/!]
